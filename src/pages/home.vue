@@ -1,14 +1,23 @@
 <template>
-    <text>首页</text>
+    <div>
+        <Header :info="headInfo"></Header>
+        <text>首页</text>
+    </div>
 </template>
 <script>
+    import Header from "@/components/header"
+
     export default {
-        data () {
+        data() {
             return {
+                headInfo: {
+                    title: '井井首页'
+                }
             }
         },
-        methods:{
-
+        methods: {},
+        components: {
+            Header
         }
     }
 </script>

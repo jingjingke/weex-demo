@@ -62,24 +62,52 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ 	return __webpack_require__(__webpack_require__.s = 1);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
+var __vue_exports__, __vue_options__
+var __vue_styles__ = []
 
+/* styles */
+__vue_styles__.push(__webpack_require__(7)
+)
 
-/*global Vue*/
+/* script */
+__vue_exports__ = __webpack_require__(8)
 
-/* weex initialized here, please do not move this line */
-var router = __webpack_require__(1);
-var App = __webpack_require__(3);
-/* eslint-disable no-new */
-new Vue(Vue.util.extend({ el: '#root', router: router }, App));
-router.push('/');
+/* template */
+var __vue_template__ = __webpack_require__(9)
+__vue_options__ = __vue_exports__ = __vue_exports__ || {}
+if (
+  typeof __vue_exports__.default === "object" ||
+  typeof __vue_exports__.default === "function"
+) {
+if (Object.keys(__vue_exports__).some(function (key) { return key !== "default" && key !== "__esModule" })) {console.error("named exports are not supported in *.vue files.")}
+__vue_options__ = __vue_exports__ = __vue_exports__.default
+}
+if (typeof __vue_options__ === "function") {
+  __vue_options__ = __vue_options__.options
+}
+__vue_options__.__file = "/Users/ziyan/git/online/weex-demo/src/components/header.vue"
+__vue_options__.render = __vue_template__.render
+__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
+__vue_options__._scopeId = "data-v-e0b68868"
+__vue_options__.style = __vue_options__.style || {}
+__vue_styles__.forEach(function (module) {
+  for (var name in module) {
+    __vue_options__.style[name] = module[name]
+  }
+})
+if (typeof __register_static_styles__ === "function") {
+  __register_static_styles__(__vue_options__._scopeId, __vue_styles__)
+}
+
+module.exports = __vue_exports__
+
 
 /***/ }),
 /* 1 */
@@ -88,11 +116,27 @@ router.push('/');
 "use strict";
 
 
-var _vueRouter = __webpack_require__(2);
+/*global Vue*/
+
+/* weex initialized here, please do not move this line */
+var router = __webpack_require__(2);
+var App = __webpack_require__(27);
+/* eslint-disable no-new */
+new Vue(Vue.util.extend({ el: '#root', router: router }, App));
+router.push('/');
+
+/***/ }),
+/* 2 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _vueRouter = __webpack_require__(3);
 
 var _vueRouter2 = _interopRequireDefault(_vueRouter);
 
-var _home = __webpack_require__(7);
+var _home = __webpack_require__(4);
 
 var _home2 = _interopRequireDefault(_home);
 
@@ -140,7 +184,7 @@ module.exports = new _vueRouter2.default({
 });
 
 /***/ }),
-/* 2 */
+/* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2601,111 +2645,18 @@ if (inBrowser && window.Vue) {
 exports.default = VueRouter;
 
 /***/ }),
-/* 3 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var __vue_exports__, __vue_options__
-var __vue_styles__ = []
-
-/* script */
-__vue_exports__ = __webpack_require__(5)
-
-/* template */
-var __vue_template__ = __webpack_require__(6)
-__vue_options__ = __vue_exports__ = __vue_exports__ || {}
-if (
-  typeof __vue_exports__.default === "object" ||
-  typeof __vue_exports__.default === "function"
-) {
-if (Object.keys(__vue_exports__).some(function (key) { return key !== "default" && key !== "__esModule" })) {console.error("named exports are not supported in *.vue files.")}
-__vue_options__ = __vue_exports__ = __vue_exports__.default
-}
-if (typeof __vue_options__ === "function") {
-  __vue_options__ = __vue_options__.options
-}
-__vue_options__.__file = "/Users/ziyan/git/online/weex-demo/src/index.vue"
-__vue_options__.render = __vue_template__.render
-__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-__vue_options__.style = __vue_options__.style || {}
-__vue_styles__.forEach(function (module) {
-  for (var name in module) {
-    __vue_options__.style[name] = module[name]
-  }
-})
-if (typeof __register_static_styles__ === "function") {
-  __register_static_styles__(__vue_options__._scopeId, __vue_styles__)
-}
-
-module.exports = __vue_exports__
-
-
-/***/ }),
-/* 4 */,
-/* 5 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _footer = __webpack_require__(27);
-
-var _footer2 = _interopRequireDefault(_footer);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-exports.default = {
-    name: 'App',
-    data: function data() {
-        return {};
-    },
-
-    components: {
-        Footer: _footer2.default
-    },
-    mounted: function mounted() {
-        // 加载iconfont字体
-        var DOM = weex.requireModule('dom');
-        DOM.addRule('fontFace', {
-            'fontFamily': "iconfont",
-            'src': "url('//at.alicdn.com/t/font_437611_e3mty20viiv5z5mi.ttf')"
-        });
-    }
-}; //
-//
-//
-//
-//
-//
-//
-
-/***/ }),
-/* 6 */
-/***/ (function(module, exports) {
-
-module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: ["wrapper"]
-  }, [_c('router-view'), _c('Footer')], 1)
-},staticRenderFns: []}
-module.exports.render._withStripped = true
-
-/***/ }),
-/* 7 */
+/* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __vue_exports__, __vue_options__
 var __vue_styles__ = []
 
 /* styles */
-__vue_styles__.push(__webpack_require__(8)
+__vue_styles__.push(__webpack_require__(5)
 )
 
 /* script */
-__vue_exports__ = __webpack_require__(9)
+__vue_exports__ = __webpack_require__(6)
 
 /* template */
 var __vue_template__ = __webpack_require__(10)
@@ -2738,13 +2689,94 @@ module.exports = __vue_exports__
 
 
 /***/ }),
-/* 8 */
+/* 5 */
 /***/ (function(module, exports) {
 
 module.exports = {}
 
 /***/ }),
-/* 9 */
+/* 6 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _header = __webpack_require__(0);
+
+var _header2 = _interopRequireDefault(_header);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = {
+    data: function data() {
+        return {
+            headInfo: {
+                title: '井井首页'
+            }
+        };
+    },
+
+    methods: {},
+    components: {
+        Header: _header2.default
+    }
+}; //
+//
+//
+//
+//
+//
+
+/***/ }),
+/* 7 */
+/***/ (function(module, exports) {
+
+module.exports = {
+  "header-warp": {
+    "height": "110"
+  },
+  "header": {
+    "position": "fixed",
+    "top": 0,
+    "left": 0,
+    "width": 100,
+    "height": "90",
+    "overflow": "hidden",
+    "background": "#222"
+  },
+  "header-back": {
+    "color": "#ffffff",
+    "position": "fixed",
+    "zIndex": 2,
+    "top": 0,
+    "left": 0,
+    "display": "block",
+    "width": "90",
+    "lineHeight": "90",
+    "height": "90",
+    "fontFamily": "'iconfont'",
+    "fontSize": "36",
+    "textAlign": "center"
+  },
+  "h1": {
+    "color": "#ffffff",
+    "height": "90",
+    "lineHeight": "90",
+    "overflow": "hidden",
+    "whiteSpace": "nowrap",
+    "display": "block",
+    "textOverflow": "ellipsis",
+    "textAlign": "center",
+    "paddingLeft": "100"
+  }
+}
+
+/***/ }),
+/* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2756,21 +2788,65 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 //
+//
+//
+//
+//
+//
 
 exports.default = {
     data: function data() {
-        return {};
+        return {
+            title: '',
+            isShow: false,
+            historys: this.$parent.$parent.historys
+        };
     },
 
-    methods: {}
+    props: ['info'],
+    methods: {
+        goBack: function goBack() {
+            this.$router.push(this.historys[this.historys.length - 2]);
+        }
+    },
+    created: function created() {
+        this.title = this.info.title || '';
+        this.isShow = this.historys.length > 1 ? true : false;
+    }
 };
+
+/***/ }),
+/* 9 */
+/***/ (function(module, exports) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: ["header-warp"]
+  }, [_c('div', {
+    staticClass: ["header"]
+  }, [(_vm.isShow) ? _c('text', {
+    staticClass: ["header-back"],
+    on: {
+      "click": _vm.goBack
+    }
+  }, [_vm._v("")]) : _vm._e(), _c('text', {
+    staticClass: ["h1"]
+  }, [_vm._v(_vm._s(_vm.title))])])])
+},staticRenderFns: []}
+module.exports.render._withStripped = true
 
 /***/ }),
 /* 10 */
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('text', [_vm._v("首页")])
+  return _c('div', [_c('Header', {
+    appendAsTree: true,
+    attrs: {
+      "info": _vm.headInfo,
+      "append": "tree"
+    }
+  }), _c('text', [_vm._v("首页")])])
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 
@@ -2834,24 +2910,45 @@ module.exports = {}
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-//
-//
-//
+
+var _header = __webpack_require__(0);
+
+var _header2 = _interopRequireDefault(_header);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = {
     data: function data() {
-        return {};
+        return {
+            headInfo: {
+                title: '分类'
+            }
+        };
     },
 
-    methods: {}
-};
+    methods: {},
+    components: {
+        Header: _header2.default
+    }
+}; //
+//
+//
+//
+//
+//
 
 /***/ }),
 /* 14 */
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('text', [_vm._v("分类")])
+  return _c('div', [_c('Header', {
+    appendAsTree: true,
+    attrs: {
+      "info": _vm.headInfo,
+      "append": "tree"
+    }
+  }), _c('text', [_vm._v("分类")])])
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 
@@ -2915,24 +3012,45 @@ module.exports = {}
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-//
-//
-//
+
+var _header = __webpack_require__(0);
+
+var _header2 = _interopRequireDefault(_header);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = {
     data: function data() {
-        return {};
+        return {
+            headInfo: {
+                title: '关于我'
+            }
+        };
     },
 
-    methods: {}
-};
+    methods: {},
+    components: {
+        Header: _header2.default
+    }
+}; //
+//
+//
+//
+//
+//
 
 /***/ }),
 /* 18 */
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('text', [_vm._v("关于我")])
+  return _c('div', [_c('Header', {
+    appendAsTree: true,
+    attrs: {
+      "info": _vm.headInfo,
+      "append": "tree"
+    }
+  }), _c('text', [_vm._v("关于我")])])
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 
@@ -2996,24 +3114,45 @@ module.exports = {}
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-//
-//
-//
+
+var _header = __webpack_require__(0);
+
+var _header2 = _interopRequireDefault(_header);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = {
     data: function data() {
-        return {};
+        return {
+            headInfo: {
+                title: '列表'
+            }
+        };
     },
 
-    methods: {}
-};
+    methods: {},
+    components: {
+        Header: _header2.default
+    }
+}; //
+//
+//
+//
+//
+//
 
 /***/ }),
 /* 22 */
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('text', [_vm._v("列表")])
+  return _c('div', [_c('Header', {
+    appendAsTree: true,
+    attrs: {
+      "info": _vm.headInfo,
+      "append": "tree"
+    }
+  }), _c('text', [_vm._v("列表")])])
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 
@@ -3077,24 +3216,45 @@ module.exports = {}
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-//
-//
-//
+
+var _header = __webpack_require__(0);
+
+var _header2 = _interopRequireDefault(_header);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = {
     data: function data() {
-        return {};
+        return {
+            headInfo: {
+                title: '文章标题'
+            }
+        };
     },
 
-    methods: {}
-};
+    methods: {},
+    components: {
+        Header: _header2.default
+    }
+}; //
+//
+//
+//
+//
+//
 
 /***/ }),
 /* 26 */
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('text', [_vm._v("文章页")])
+  return _c('div', [_c('Header', {
+    appendAsTree: true,
+    attrs: {
+      "info": _vm.headInfo,
+      "append": "tree"
+    }
+  }), _c('text', [_vm._v("文章页")])])
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 
@@ -3105,15 +3265,114 @@ module.exports.render._withStripped = true
 var __vue_exports__, __vue_options__
 var __vue_styles__ = []
 
+/* script */
+__vue_exports__ = __webpack_require__(28)
+
+/* template */
+var __vue_template__ = __webpack_require__(33)
+__vue_options__ = __vue_exports__ = __vue_exports__ || {}
+if (
+  typeof __vue_exports__.default === "object" ||
+  typeof __vue_exports__.default === "function"
+) {
+if (Object.keys(__vue_exports__).some(function (key) { return key !== "default" && key !== "__esModule" })) {console.error("named exports are not supported in *.vue files.")}
+__vue_options__ = __vue_exports__ = __vue_exports__.default
+}
+if (typeof __vue_options__ === "function") {
+  __vue_options__ = __vue_options__.options
+}
+__vue_options__.__file = "/Users/ziyan/git/online/weex-demo/src/index.vue"
+__vue_options__.render = __vue_template__.render
+__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
+__vue_options__.style = __vue_options__.style || {}
+__vue_styles__.forEach(function (module) {
+  for (var name in module) {
+    __vue_options__.style[name] = module[name]
+  }
+})
+if (typeof __register_static_styles__ === "function") {
+  __register_static_styles__(__vue_options__._scopeId, __vue_styles__)
+}
+
+module.exports = __vue_exports__
+
+
+/***/ }),
+/* 28 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _footer = __webpack_require__(29);
+
+var _footer2 = _interopRequireDefault(_footer);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = {
+    name: 'App',
+    data: function data() {
+        return {
+            historys: []
+        };
+    },
+
+    components: {
+        Footer: _footer2.default
+    },
+    methods: {
+        routerChange: function routerChange(now, old) {
+            // 判断基础是记录的历史条件不小于2条 并且 判断当前值与老值是否进行了一个循环
+            if (this.historys.length >= 2 && now === this.historys[this.historys.length - 2]) {
+                this.historys.splice(this.historys.length - 1, 1);
+            } else {
+                this.historys.push(now);
+            }
+        }
+    },
+    watch: {
+        '$route.path': 'routerChange'
+    },
+    created: function created() {
+        this.historys = [this.$route.path];
+    },
+    mounted: function mounted() {
+        // 加载iconfont字体
+        var DOM = weex.requireModule('dom');
+        DOM.addRule('fontFace', {
+            'fontFamily': "iconfont",
+            'src': "url('//at.alicdn.com/t/font_437611_uc5tywmhqsfc4n29.ttf')"
+        });
+    }
+}; //
+//
+//
+//
+//
+//
+//
+
+/***/ }),
+/* 29 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var __vue_exports__, __vue_options__
+var __vue_styles__ = []
+
 /* styles */
-__vue_styles__.push(__webpack_require__(28)
+__vue_styles__.push(__webpack_require__(30)
 )
 
 /* script */
-__vue_exports__ = __webpack_require__(29)
+__vue_exports__ = __webpack_require__(31)
 
 /* template */
-var __vue_template__ = __webpack_require__(30)
+var __vue_template__ = __webpack_require__(32)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -3143,7 +3402,7 @@ module.exports = __vue_exports__
 
 
 /***/ }),
-/* 28 */
+/* 30 */
 /***/ (function(module, exports) {
 
 module.exports = {
@@ -3187,7 +3446,7 @@ module.exports = {
 }
 
 /***/ }),
-/* 29 */
+/* 31 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3248,7 +3507,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 30 */
+/* 32 */
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -3266,6 +3525,17 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       }
     }, [_vm._v(_vm._s(item.name) + "\n    ")])
   }))
+},staticRenderFns: []}
+module.exports.render._withStripped = true
+
+/***/ }),
+/* 33 */
+/***/ (function(module, exports) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: ["wrapper"]
+  }, [_c('router-view'), _c('Footer')], 1)
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 

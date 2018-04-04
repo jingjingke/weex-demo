@@ -1,14 +1,23 @@
 <template>
-    <text>关于我</text>
+    <div>
+        <Header :info="headInfo"></Header>
+        <text>关于我</text>
+    </div>
 </template>
 <script>
+    import Header from "@/components/header"
+
     export default {
-        data () {
+        data() {
             return {
+                headInfo: {
+                    title: '关于我'
+                }
             }
         },
-        methods:{
-
+        methods: {},
+        components: {
+            Header
         }
     }
 </script>
