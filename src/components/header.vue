@@ -7,12 +7,14 @@
     </div>
 </template>
 <script>
+    const storage = weex.requireModule('storage')
+
     export default {
         data() {
             return {
                 title: '',
                 isShow: false,
-                historys:this.$parent.$parent.$parent.historys || []
+                historys:[]
             }
         },
         props: ['info'],
@@ -22,8 +24,11 @@
             }
         },
         created() {
-            this.title = this.info.title || '';
-            this.isShow = this.historys.length > 1 ? true : false;
+            storage.getItem('historys', event => {
+                this.historys = event.data.split(',');
+                this.title = this.info.title || '';
+                this.isShow = this.historys.length > 1 ? true : false;
+            })
         }
     }
 </script>

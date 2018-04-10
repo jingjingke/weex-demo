@@ -18,6 +18,7 @@
     import LoadingMore from "@/components/loading-more"
 
     const modal = weex.requireModule('modal')
+    const storage = weex.requireModule('storage')
 
     export default {
         data() {
@@ -49,11 +50,11 @@
                     sendData.limit = this.filter.begin + ',' + this.filter.base;
                     this.GET('list.php', sendData, (res) => {
                         //赋值并判断条数的情况，（部分）确认已经没有更多的情况
-                        if(res.data.length === 0){
+                        if (res.data.length === 0) {
                             this.hasMore = false;
-                        }else{
+                        } else {
                             this.articleList = this.articleList.concat(res.data);
-                            if(res.data.length < this.filter.base){
+                            if (res.data.length < this.filter.base) {
                                 this.hasMore = false;
                             }
                         }

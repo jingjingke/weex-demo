@@ -8,6 +8,8 @@
 <script>
     import Footer from "@/components/footer"
 
+    const storage = weex.requireModule('storage')
+
     export default {
         name: 'App',
         data() {
@@ -20,19 +22,29 @@
         },
         methods: {
             routerChange(now, old) {
-                // 判断基础是记录的历史条件不小于2条 并且 判断当前值与老值是否进行了一个循环
-                if (this.historys.length >= 2 && now === this.historys[this.historys.length - 2]) {
-                    this.historys.splice(this.historys.length - 1, 1)
-                } else {
-                    this.historys.push(now)
+                // 如果当前是home的话就将历史记录归零
+                if(now === '/home'){
+                    storage.setItem('historys',now)
+                }else{
+                    // 提取缓存的路由值
+                    storage.getItem('historys',event=>{
+                        let historys = event.data.split(',')
+                        // 判断基础是记录的历史条件不小于2条 并且 判断当前值与老值是否进行了一个循环
+                        if (historys.length >= 2 && now === historys[historys.length - 2]) {
+                            historys.splice(historys.length - 1, 1)
+                        } else {
+                            historys.push(now)
+                        }
+                        storage.setItem('historys',String(historys))
+                    })
                 }
             }
         },
         watch: {
-            '$route.path': 'routerChange'
+            '$route.fullPath': 'routerChange'
         },
         created() {
-            this.historys = [this.$route.path];
+            storage.setItem('historys',this.$route.fullPath)
         },
         mounted() {
             // 加载iconfont字体
