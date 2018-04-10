@@ -12,7 +12,7 @@
             return {
                 title: '',
                 isShow: false,
-                historys:this.$parent.$parent.historys || []
+                historys:this.$parent.$parent.$parent.historys || []
             }
         },
         props: ['info'],

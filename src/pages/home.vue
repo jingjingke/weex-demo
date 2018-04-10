@@ -21,9 +21,6 @@
 
     import LoadingMore from "@/components/loading-more"
 
-    const stream = weex.requireModule('stream');
-    const modal = weex.requireModule('modal')
-
     export default {
         data() {
             return {

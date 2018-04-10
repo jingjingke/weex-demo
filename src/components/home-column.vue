@@ -1,15 +1,43 @@
 <template>
     <div class="section">
-        <text class="section-li notes">前端笔记</text>
-        <text class="section-li works">网页作品</text>
-        <text class="section-li share">转载分享</text>
-        <text class="section-li life bor-r-no">生活锁事</text>
+        <text class="section-li notes" v-for="(item,index) of list" @click="goColumnList(item.id,item.name)"
+              :class="['section-li',{'bor-r-no':index === list.length-1},item.style]">{{item.name}}
+        </text>
     </div>
 </template>
 <script>
     export default {
         data() {
-            return {}
+            return {
+                list: [{
+                    name: '前端笔记',
+                    style: 'notes',
+                    id: '1'
+                }, {
+                    name: '网页作品',
+                    style: 'notes',
+                    id: '2'
+                }, {
+                    name: '转载分享',
+                    style: 'share',
+                    id: '5'
+                }, {
+                    name: '生活锁事',
+                    style: 'life',
+                    id: '3'
+                }]
+            }
+        },
+        methods: {
+            goColumnList(id, name) {
+                this.$router.push({
+                    path: '/list', query: {
+                        id:id,
+                        name:name,
+                        type:'column'
+                    }
+                })
+            }
         }
     }
 </script>

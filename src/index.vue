@@ -1,8 +1,8 @@
 <template>
-    <div class="wrapper">
+    <list class="wrapper">
         <router-view/>
         <Footer></Footer>
-    </div>
+    </list>
 </template>
 
 <script>

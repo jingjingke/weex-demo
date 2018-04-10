@@ -27,7 +27,7 @@
             <text class="about-info">熟练使用JQ库以及VUE框架，对React也有一些接触（github中有贴出一个react实现的博客实例）。</text>
             <text class="about-info">欢迎小伙伴和我交流学习~</text>
         </div>
-        <div class="about-warp warp02">
+        <div class="about-warp warp02 mb30">
             <div class="about-des">
                 <text class="des-label">Github</text>
                 <text class="des-text">https://github.com/jingjingke</text>
@@ -102,5 +102,9 @@
         margin-top: 12px;
         margin-bottom: 12px;
         text-indent: 50px;
+    }
+
+    .mb30 {
+        margin-bottom: 30px;
     }
 </style>
