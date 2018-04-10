@@ -12,7 +12,7 @@
             return {
                 title: '',
                 isShow: false,
-                historys:this.$parent.$parent.historys
+                historys:this.$parent.$parent.historys || []
             }
         },
         props: ['info'],
@@ -29,7 +29,9 @@
 </script>
 <style scoped>
     .header-warp {
-        height: 110px;
+        position: relative;
+        z-index: 99;
+        height:90px;
     }
 
     .header {

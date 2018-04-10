@@ -1,10 +1,12 @@
 <template>
-    <div class="footer">
-        <text v-for="item of list"
-              @click="jumpPath('/'+item.path)"
-              :class="['footer-li '+item.path,{on:item.on}]"
-        >{{item.name}}
-        </text>
+    <div class="footer-warp">
+        <div class="footer">
+            <text v-for="item of list"
+                  @click="jumpPath('/'+item.path)"
+                  :class="['footer-li '+item.path,{on:item.on}]"
+            >{{item.name}}
+            </text>
+        </div>
     </div>
 </template>
 <script>
@@ -48,6 +50,11 @@
     }
 </script>
 <style scoped>
+    .footer-warp {
+        position: relative;
+        z-index: 99;
+        height: 130px;
+    }
     .footer {
         position: fixed;
         bottom: 0;

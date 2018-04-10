@@ -4,6 +4,10 @@
 const router = require('./router');
 const App = require('@/index.vue');
 /* eslint-disable no-new */
+import mixins from '@/mixins'
+Vue.mixin(mixins)
+
 new Vue(Vue.util.extend({el: '#root', router}, App));
+
 router.push('/');
 

@@ -39,7 +39,7 @@
             let DOM = weex.requireModule('dom');
             DOM.addRule('fontFace', {
                 'fontFamily': "iconfont",
-                'src': "url('//at.alicdn.com/t/font_437611_uc5tywmhqsfc4n29.ttf')"
+                'src': "url('//at.alicdn.com/t/font_437611_6plhfjz8mxlp7gb9.ttf')"
             })
         }
     }
