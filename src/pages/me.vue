@@ -1,11 +1,12 @@
 <template>
     <div>
         <Header :info="headInfo"></Header>
-        <text>关于我</text>
+        <AboutMe></AboutMe>
     </div>
 </template>
 <script>
     import Header from "@/components/header"
+    import AboutMe from "@/components/me-about"
 
     export default {
         data() {
@@ -17,9 +18,8 @@
         },
         methods: {},
         components: {
-            Header
+            Header,
+            AboutMe
         }
     }
 </script>
-<style scoped>
-</style>

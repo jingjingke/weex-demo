@@ -25,7 +25,7 @@
         background: #fafafa;
         text-indent: 24px;
         font-size: 30px;
-        color: #555;
+        color: #0aba07;
     }
 
     .type-list {
