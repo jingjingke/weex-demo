@@ -1,6 +1,6 @@
 <template>
     <div class="list-warp">
-        <div class="list-block" v-for="(item,index) of data" :key="item.id">
+        <div class="list-block" v-for="(item,index) of data" :key="item.aid" @click="goArticle(item.aid,item.title)">
             <img class="list-img" :src="'http://www.jingjingke.com/'+item.litpic">
             <div class="list-text">
                 <text class="list-title">{{item.title}}</text>
@@ -11,7 +11,17 @@
 </template>
 <script>
     export default {
-        props:['data']
+        props:['data'],
+        methods:{
+            goArticle(id, name) {
+                this.$router.push({
+                    path: '/article', query: {
+                        id:id,
+                        name:name
+                    }
+                })
+            }
+        }
     }
 </script>
 <style scoped>
