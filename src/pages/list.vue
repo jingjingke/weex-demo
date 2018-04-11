@@ -3,7 +3,7 @@
         <Header :info="headInfo"></Header>
         <LoadingDialog :status="isAjax">
             <CommonList :data="articleList"></CommonList>
-            <div @appear="onloading">
+            <div @appear="onloading" v-if="!isOnly">
                 <LoadingMore :status="hasMore"></LoadingMore>
             </div>
         </LoadingDialog>
@@ -35,7 +35,8 @@
                 },
                 hasMore: true,
                 isAjax: true,
-                moreStatus: true
+                moreStatus: true,
+                isOnly:false,
             }
         },
         methods: {
@@ -57,6 +58,10 @@
                             if (res.data.length < this.filter.base) {
                                 this.hasMore = false;
                             }
+                        }
+                        //如果是第一页，且不满足基本条数时，就不显示
+                        if(this.filter.begin === 0 && res.data.length < this.filter.base){
+                            this.isOnly = true;
                         }
                         resolve()
                     })

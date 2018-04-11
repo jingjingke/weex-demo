@@ -3927,7 +3927,27 @@ exports.default = {
         return {};
     },
 
-    props: ['data']
+    props: ['data'],
+    methods: {
+        goColumnList: function goColumnList(id, name) {
+            this.$router.push({
+                path: '/list', query: {
+                    id: id,
+                    name: name,
+                    type: 'column'
+                }
+            });
+        },
+        goTagList: function goTagList(id, name) {
+            this.$router.push({
+                path: '/list', query: {
+                    id: id,
+                    name: name,
+                    type: 'tag'
+                }
+            });
+        }
+    }
 };
 
 /***/ }),
@@ -3939,12 +3959,22 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: ["type-warp"]
   }, [_vm._l((_vm.data), function(item) {
     return [_c('text', {
-      staticClass: ["type-title"]
+      staticClass: ["type-title"],
+      on: {
+        "click": function($event) {
+          _vm.goColumnList(item.id, item.name)
+        }
+      }
     }, [_vm._v(_vm._s(item.name))]), _c('div', {
       staticClass: ["type-list"]
     }, _vm._l((item.children), function(list) {
       return _c('div', {
-        staticClass: ["type-tag"]
+        staticClass: ["type-tag"],
+        on: {
+          "click": function($event) {
+            _vm.goTagList(list.id, list.name)
+          }
+        }
       }, [_c('text', {
         staticClass: ["type-text"]
       }, [_vm._v(_vm._s(list.name))]), _c('text', {
@@ -4360,7 +4390,8 @@ exports.default = {
             },
             hasMore: true,
             isAjax: true,
-            moreStatus: true
+            moreStatus: true,
+            isOnly: false
         };
     },
 
@@ -4385,6 +4416,10 @@ exports.default = {
                         if (res.data.length < _this.filter.base) {
                             _this.hasMore = false;
                         }
+                    }
+                    //如果是第一页，且不满足基本条数时，就不显示
+                    if (_this.filter.begin === 0 && res.data.length < _this.filter.base) {
+                        _this.isOnly = true;
                     }
                     resolve();
                 });
@@ -4450,7 +4485,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "data": _vm.articleList
     }
-  }), _c('div', {
+  }), (!_vm.isOnly) ? _c('div', {
     on: {
       "appear": _vm.onloading
     }
@@ -4458,7 +4493,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "status": _vm.hasMore
     }
-  })], 1)], 1)], 1)
+  })], 1) : _vm._e()], 1)], 1)
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 

@@ -1,9 +1,9 @@
 <template>
     <div class="type-warp">
         <template v-for="item of data">
-        <text class="type-title">{{item.name}}</text>
+        <text class="type-title" @click="goColumnList(item.id,item.name)">{{item.name}}</text>
         <div class="type-list">
-            <div class="type-tag" v-for="list of item.children">
+            <div class="type-tag" v-for="list of item.children" @click="goTagList(list.id,list.name)">
                 <text class="type-text">{{list.name}}</text>
                 <text class="type-total">({{list.total}})</text>
             </div>
@@ -16,7 +16,27 @@
         data() {
             return {}
         },
-        props:['data']
+        props:['data'],
+        methods:{
+            goColumnList(id, name) {
+                this.$router.push({
+                    path: '/list', query: {
+                        id:id,
+                        name:name,
+                        type:'column'
+                    }
+                })
+            },
+            goTagList(id, name) {
+                this.$router.push({
+                    path: '/list', query: {
+                        id:id,
+                        name:name,
+                        type:'tag'
+                    }
+                })
+            }
+        }
     }
 </script>
 <style scoped>
