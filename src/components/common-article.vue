@@ -6,9 +6,9 @@
             <text class="article-t-s">{{data.source}}</text>
         </div>
         <text class="article-title">{{data.title}}</text>
-        <img class="article-image" :src="'http://www.jingjingke.com/' + data.litpic">
+        <image class="article-image" :src="'http://www.jingjingke.com/' + data.litpic"></image>
         <text class="article-text">{{data.description}}</text>
-        <text class="article-text" v-html="data.body"></text>
+        <RichText v-for="item of bodyTree" :data="item"></RichText>
         <div class="article-tag-warp" v-if="data.tags.length > 0 && keyList.length > 0">
             <text class="article-tag tag-link"
                   v-for="item of data.tags" @click="goTagList(item.tid,item.tag)">{{item.tag}}</text>
@@ -17,10 +17,14 @@
     </div>
 </template>
 <script>
+    // 引入富文本解析方法
+    import richTextParse from "@/utils/richText/richText.js"
+
     export default {
         data() {
             return {
-                keyList: []
+                keyList: [],
+                bodyTree: {}
             }
         },
         props: ['data'],
@@ -45,7 +49,10 @@
             }
         },
         created() {
+            // 关键词数组
             this.keyList = this.data.keywords.split(',');
+            // 解析富文本-转为树形
+            this.bodyTree = richTextParse.go(this.data.body)
         }
     }
 </script>
