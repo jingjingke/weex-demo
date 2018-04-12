@@ -3442,7 +3442,17 @@ Object.defineProperty(exports, "__esModule", {
 //
 
 exports.default = {
-    props: ['data']
+    props: ['data'],
+    methods: {
+        goArticle: function goArticle(id, name) {
+            this.$router.push({
+                path: '/article', query: {
+                    id: id,
+                    name: name
+                }
+            });
+        }
+    }
 };
 
 /***/ }),
@@ -3459,7 +3469,12 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }, [_vm._l((_vm.data), function(img) {
     return _c('div', {
-      staticClass: ["frame"]
+      staticClass: ["frame"],
+      on: {
+        "click": function($event) {
+          _vm.goArticle(img.aid, img.title)
+        }
+      }
     }, [_c('image', {
       staticClass: ["image"],
       attrs: {
