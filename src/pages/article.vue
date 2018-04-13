@@ -1,6 +1,6 @@
 <template>
     <div>
-        <Header :info="headInfo"></Header>
+        <HeaderFlex :info="headInfo"></HeaderFlex>
         <LoadingDialog :status="isAjax">
             <CommonArticle :data="content"></CommonArticle>
         </LoadingDialog>
@@ -9,7 +9,7 @@
 <script>
     import LoadingDialog from "@/components/loading-dialog"
 
-    import Header from "@/components/header"
+    import HeaderFlex from "@/components/header"
     import CommonArticle from "@/components/common-article"
 
     export default {
@@ -42,7 +42,7 @@
         },
         components: {
             LoadingDialog,
-            Header,
+            HeaderFlex,
             CommonArticle
         },
         created() {

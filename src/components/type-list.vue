@@ -43,45 +43,39 @@
 <style scoped>
     .type-title {
         line-height: 88px;
-        background: #fafafa;
-        text-indent: 24px;
+        background-color: #fafafa;
+        padding-left: 24px;
         font-size: 30px;
         color: #0aba07;
     }
 
     .type-list {
         padding-right: 24px;
-        display: block;
         margin-top: 18px;
         margin-bottom: 32px;
+        flex-direction:row;
     }
 
     .type-tag {
-        display: inline-block;
         height: 60px;
         line-height: 60px;
-        padding-left: 24px;
-        padding-right: 24px;
+        padding: 0 24px;
         margin-left: 24px;
-        border: 1px solid #e8e8e8;
+        border-width: 1px;
+        border-color: #e8e8e8;
         border-radius: 12px;
-        background: #fafafa;
+        background-color: #fafafa;
+        flex-direction: row;
+        align-items:center;
     }
 
     .type-text {
         font-size: 28px;
-        height: inherit;
-        line-height: inherit;
-        display: inline-block;
     }
 
     .type-total {
         font-size: 24px;
         padding-left: 6px;
         color: #999;
-        height: inherit;
-        line-height: inherit;
-        display: inline-block;
-
     }
 </style>

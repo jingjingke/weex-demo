@@ -42,22 +42,17 @@
 <style scoped>
     .about-warp {
         width: 700px;
-        margin-left: 28px;
-        margin-top: 30px;
-        border: 2px solid #e8e8e8;
-        background: #fafafa;
-        padding-left: 20px;
-        padding-right: 20px;
-        padding-top: 20px;
-        padding-bottom: 20px;
+        margin: 28px 25px 0;
+        border-width: 2px;
+        border-color: #e8e8e8;
+        background-color: #fafafa;
+        padding: 20px;
         border-radius: 24px;
         flex-direction: row;
     }
-
     .warp02 {
         flex-direction: column;
     }
-
     .avatar {
         width: 200px;
         height: 200px;
@@ -65,45 +60,37 @@
         margin-right: 24px;
         overflow: hidden;
     }
-
     .about-des {
         color: #333;
-        display: block;
         height: 50px;
-        line-height: 50px;
+        flex-direction: row;
+        align-items:center;
     }
 
     .des-text {
         display: inline-block;
         font-size: 26px;
-        line-height: inherit;
     }
 
     .des-label {
-        float: left;
-        display: inline;
-        font-size: 24px;
         width: 106px;
+        font-size: 24px;
         text-align: center;
-        background: #0aba07;
+        background-color: #0aba07;
         color: #fff;
         border-radius: 10px;
-        height: 36px;
-        line-height: 36px;
-        margin-top: 8px;
-        margin-right: 18px;
+        height: 34px;
+        line-height: 34px;
+        margin:0 18px;
     }
 
     .about-info {
         font-size: 28px;
         line-height: 50px;
-        width: 100%;
         color: #333;
-        margin-top: 12px;
-        margin-bottom: 12px;
+        margin: 12px 0;
         text-indent: 50px;
     }
-
     .mb30 {
         margin-bottom: 30px;
     }

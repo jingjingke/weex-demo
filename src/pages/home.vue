@@ -1,6 +1,6 @@
 <template>
     <div>
-        <Header :info="headInfo"></Header>
+        <HeaderFlex :info="headInfo"></HeaderFlex>
         <LoadingDialog :status="isAjax">
             <HomeSlider :data="imageList"></HomeSlider>
             <HomeColumn></HomeColumn>
@@ -9,15 +9,17 @@
                 <LoadingMore :status="hasMore"></LoadingMore>
             </div>
         </LoadingDialog>
+        <!--<FooterFelx></FooterFelx>-->
     </div>
 </template>
 <script>
     import LoadingDialog from "@/components/loading-dialog"
 
-    import Header from "@/components/header"
+    import HeaderFlex from "@/components/header"
     import HomeSlider from "@/components/home-slider"
     import HomeColumn from "@/components/home-column"
     import CommonList from "@/components/common-list"
+    import FooterFelx from "@/components/footer"
 
     import LoadingMore from "@/components/loading-more"
 
@@ -79,10 +81,11 @@
         },
         components: {
             LoadingDialog,
-            Header,
+            HeaderFlex,
             HomeSlider,
             HomeColumn,
             CommonList,
+            FooterFelx,
             LoadingMore
         },
         created() {

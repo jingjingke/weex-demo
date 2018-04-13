@@ -39,10 +39,8 @@
 
     .indicator {
         bottom: 10px;
-        width: 100%;
-    }
-
-    .weex-indicator-item-active {
-        background-color: #fff;
+        width:760px;
+        item-color: #ccc;
+        item-selected-color: #0aba07;
     }
 </style>

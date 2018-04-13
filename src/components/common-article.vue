@@ -8,7 +8,7 @@
         <text class="article-title">{{data.title}}</text>
         <image class="article-image" :src="'http://www.jingjingke.com/' + data.litpic"></image>
         <text class="article-text">{{data.description}}</text>
-        <RichText v-for="item of bodyTree" :data="item"></RichText>
+        <RichText v-for="(item,index) of bodyTree" :data="item" :key="index"></RichText>
         <div class="article-tag-warp" v-if="data.tags.length > 0 && keyList.length > 0">
             <text class="article-tag tag-link"
                   v-for="item of data.tags" @click="goTagList(item.tid,item.tag)">{{item.tag}}</text>
@@ -59,27 +59,30 @@
 <style scoped>
     .article-info {
         height: 88px;
-        background: #fafafa;
-        border-bottom: 1px solid #e8e8e8;
-        display: block;
+        background-color: #fafafa;
+        border-bottom-width: 1px;
+        border-bottom-color: #e8e8e8;
         padding-left: 24px;
         padding-right: 24px;
+        flex-direction: row;
+        align-items: center;
     }
 
     .article-type, .article-t-s {
-        display: inline-block;
-        background: #0aba07;
+        background-color: #0aba07;
         color: #fff;
         border-radius: 40px;
         font-size: 26px;
         line-height: 56px;
-        padding-left: 24px;
-        padding-right: 24px;
+        height: 56px;
+        padding: 0 24px;
+        margin-right: 12px;
     }
 
     .article-t-s {
-        background: #fff;
-        border: 1px solid #f2f2f2;
+        background-color: #fff;
+        border-width: 1px;
+        border-color: #f2f2f2;
         color: #555;
     }
 
@@ -87,15 +90,16 @@
         font-size: 32px;
         line-height: 1.8em;
         padding: 24px;
-        border-bottom: 1px dotted #f2f2f2;
+        border-bottom-width: 1px;
+        border-bottom-color: #f0f0f0;
+        border-bottom-style: dotted;
         font-weight: bold;
     }
 
     .article-image {
         width: 700px;
         height: 420px;
-        margin-top: 30px;
-        margin-left: 30px;
+        margin: 30px 25px 0;
     }
 
     .article-text {
@@ -111,29 +115,24 @@
     }
 
     .article-tag-warp {
-        padding-top: 36px;
-        padding-bottom: 36px;
-        padding-left: 16px;
-        padding-right: 24px;
-        display: block;
+        padding: 36px 12px 36px 24px;
+        flex-direction: row;
     }
 
     .article-tag {
-        display: inline-block;
         height: 60px;
         line-height: 60px;
-        padding-left: 24px;
-        padding-right: 24px;
+        padding: 0 24px;
         margin-left: 12px;
-        border: 1px solid #f2f2f2;
+        border-width: 1px;
+        border-color: #f2f2f2;
         border-radius: 8px;
-        background: #fafafa;
+        background-color: #fafafa;
         color: #555;
         font-size: 26px;
     }
-
     .tag-link {
-        border: 1px solid #0aba07;
+        border-color: #0aba07;
         color: #0aba07;
     }
 </style>

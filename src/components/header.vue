@@ -1,9 +1,7 @@
 <template>
-    <div class="header-warp">
-        <div class="header">
-            <text class="header-back" v-if="isShow" @click="goBack">&#xe300;</text>
-            <text class="h1">{{title}}</text>
-        </div>
+    <div class="header">
+        <text class="header-back" v-show="isShow" @click="goBack">&#xe300;</text>
+        <text class="h1">{{title}}</text>
     </div>
 </template>
 <script>
@@ -14,7 +12,7 @@
             return {
                 title: '',
                 isShow: false,
-                historys:[]
+                historys: []
             }
         },
         props: ['info'],
@@ -33,26 +31,21 @@
     }
 </script>
 <style scoped>
-    .header-warp {
-        position: relative;
-        z-index: 99;
-        height:90px;
-    }
-
     .header {
         position: fixed;
+        z-index: 99;
         top: 0;
         left: 0;
-        width: 100%;
+        width: 750px;
         height: 90px;
         overflow: hidden;
-        background: #222;
+        background-color: #222;
     }
 
     .header-back {
         color: #fff;
         position: fixed;
-        z-index: 2;
+        z-index: 100;
         top: 0;
         left: 0;
         display: block;
@@ -73,7 +66,7 @@
         display: block;
         text-overflow: ellipsis;
         text-align: center;
-        padding-left: 100px;
-        width: calc(100% - 100px);
+        margin-left: 100px;
+        width: 550px;
     }
 </style>

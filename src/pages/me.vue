@@ -1,11 +1,11 @@
 <template>
     <div>
-        <Header :info="headInfo"></Header>
+        <HeaderFlex :info="headInfo"></HeaderFlex>
         <AboutMe></AboutMe>
     </div>
 </template>
 <script>
-    import Header from "@/components/header"
+    import HeaderFlex from "@/components/header"
     import AboutMe from "@/components/me-about"
 
     export default {
@@ -18,7 +18,7 @@
         },
         methods: {},
         components: {
-            Header,
+            HeaderFlex,
             AboutMe
         }
     }

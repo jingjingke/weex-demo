@@ -1,6 +1,6 @@
 <template>
     <div>
-        <Header :info="headInfo"></Header>
+        <HeaderFlex :info="headInfo"></HeaderFlex>
         <LoadingDialog :status="isAjax">
             <TypeList :data="typeTree"></TypeList>
         </LoadingDialog>
@@ -8,7 +8,7 @@
 </template>
 <script>
     import LoadingDialog from "@/components/loading-dialog"
-    import Header from "@/components/header"
+    import HeaderFlex from "@/components/header"
     import TypeList from "@/components/type-list"
 
     export default {
@@ -60,7 +60,7 @@
         },
         components: {
             LoadingDialog,
-            Header,
+            HeaderFlex,
             TypeList
         },
         created() {

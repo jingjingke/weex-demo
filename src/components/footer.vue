@@ -1,11 +1,8 @@
 <template>
-    <div class="footer-warp">
-        <div class="footer">
-            <text v-for="item of list"
-                  @click="jumpPath('/'+item.path)"
-                  :class="['footer-li '+item.path,{on:item.on}]"
-            >{{item.name}}
-            </text>
+    <div class="footer">
+        <div v-for="item of list" @click="jumpPath('/'+item.path)" class="footer-li">
+            <text :class="['footer-icon',{'on-icon':item.on}]" v-html="item.icon">&#xe202;</text>
+            <text :class="['footer-text',{'on-text':item.on}]">{{item.name}}</text>
         </div>
     </div>
 </template>
@@ -16,14 +13,17 @@
                 list: [{
                     name: '首页',
                     path: 'home',
-                    on: true
+                    icon:'&#xe201;',
+                    on: false
                 }, {
                     name: '分类',
                     path: 'type',
+                    icon:'&#xe202;',
                     on: false
                 }, {
                     name: '关于我',
                     path: 'me',
+                    icon:'&#xe203;',
                     on: false
                 }]
             }
@@ -32,76 +32,66 @@
             '$route.path': 'routerChange'
         },
         methods: {
+            checkOn(cls,bloon){
+                return cls+' '+cls+'-on';
+            },
             // 跳转
             jumpPath(path) {
                 this.$router.push(path)
             },
             // 监听路径发生变化时
             routerChange(value) {
-                this.list.forEach(item=>{
-                    if('/' + item.path === value){
+                this.list.forEach(item => {
+                    if ('/' + item.path === value) {
                         item.on = true
-                    }else{
+                    } else {
                         item.on = false
                     }
                 })
             }
+        },
+        created() {
+            this.routerChange(this.$route.path)
         }
     }
 </script>
 <style scoped>
-    .footer-warp {
-        position: relative;
-        z-index: 99;
-        height: 130px;
-    }
     .footer {
         position: fixed;
-        bottom: 0;
         left: 0;
+        bottom: 0;
         height: 130px;
-        width: 100%;
-        background: #fafafa;
-        border-top: 1px solid #e8e8e8;
+        width: 750px;
+        background-color: #fafafa;
+        border-top-width: 1px;
+        border-top-color: #e8e8e8;
         flex-direction: row;
     }
 
     .footer-li {
-        width: 33.33%;
-        height: inherit;
         text-align: center;
-        font-size: 14px;
-        color: #999;
+        flex:1;
+        justify-content: center;
+        align-items:stretch;
     }
-
-    .footer-li:before {
-        font-size: 44px;
+    .footer-icon {
         font-family: 'iconfont';
-        content: '';
-        display: block;
-        height: 75px;
-        line-height: 75px;
-        padding-top: 8px;
+        text-align: center;
+        font-size: 44px;
+        line-height: 70px;
         color: #ddd;
     }
 
-    .home:before {
-        content: '\e201';
+    .footer-text {
+        font-size: 24px;
+        line-height: 40px;
+        color: #999;
+        text-align: center;
     }
-
-    .type:before {
-        content: '\e202';
-    }
-
-    .me:before {
-        content: '\e203';
-    }
-
-    .on {
-        color: #333;
-    }
-
-    .on:before {
+    .on-icon {
         color: #0aba07;
+    }
+    .on-text,.footer-text-on {
+        color: #333;
     }
 </style>

@@ -2,7 +2,7 @@
     <image v-if="data.name === 'img'" resize="stretch" :alt="data.attrs.alt||''" :src="data.attrs.src"
            :class="data.attrs.class" @load="loadImg" :style="'width:700px;height:'+imgH+'px'"></image>
     <div v-else-if="data.children !== undefined" :class="data.attrs.class">
-        <RichText v-for="item of data.children" :data="item"></RichText>
+        <RichText v-for="(item,index) of data.children" :data="item" :key="index"></RichText>
     </div>
     <text v-else v-show="isShow" v-html="checkStr(data)"></text>
 </template>

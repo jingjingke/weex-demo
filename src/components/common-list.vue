@@ -27,7 +27,8 @@
 <style scoped>
     .list-block {
         height: 220px;
-        border-bottom: 1px dotted #f2f2f2;
+        border-bottom-color: #f2f2f2;
+        border-bottom-width: 1px;
         flex-direction: row;
     }
     .list-img {

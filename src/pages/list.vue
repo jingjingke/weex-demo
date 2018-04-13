@@ -1,6 +1,6 @@
 <template>
     <div>
-        <Header :info="headInfo"></Header>
+        <HeaderFlex :info="headInfo"></HeaderFlex>
         <LoadingDialog :status="isAjax">
             <CommonList :data="articleList"></CommonList>
             <div @appear="onloading" v-if="!isOnly">
@@ -12,7 +12,7 @@
 <script>
     import LoadingDialog from "@/components/loading-dialog"
 
-    import Header from "@/components/header"
+    import HeaderFlex from "@/components/header"
     import CommonList from "@/components/common-list"
 
     import LoadingMore from "@/components/loading-more"
@@ -81,7 +81,7 @@
         },
         components: {
             LoadingDialog,
-            Header,
+            HeaderFlex,
             CommonList,
             LoadingMore
         },
