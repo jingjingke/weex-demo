@@ -1,38 +1,47 @@
-## Commands
+### 套路-命令行
 
-### npm start
+启动开发服务器：
+```
+npm start
+```
 
-Starts the development server for you to preview your weex page on browser.
-You can also scan the QR code using weex playground to preview weex page on native.
 
-### npm run dev
+在监视模式下打开代码编译任务：
+```
+npm run dev
+```
 
-Open the code compilation task in watch mode.
 
-### npm run ios
+启动开发服务器并在iOS模拟器中加载您的应用程序（仅限Mac，需要Xcode）：
+```
+npm run ios
+```
 
-(Mac only, requires Xcode)
-Starts the development server and loads your app in an iOS simulator.
 
-### npm run android
+启动开发服务器并在连接的Android设备或仿真器上加载您的应用程序（需要Android构建工具）：
+```
+npm run android
+```
 
-(Requires Android build tools)
-Starts the development server and loads your app on a connected Android device or emulator.
 
-### npm run pack:ios
+将ios项目打包成ipa包（仅限Mac，需要Xcode）：
+```
+npm run pack:ios
+```
 
-(Mac only, requires Xcode)
-Packaging ios project into ipa package.
 
-### npm run pack:android
+将Android项目打包成apk包（需要Android构建工具）：
+```
+npm run pack:android
+```
 
-(Requires Android build tools)
-Packaging android project into apk package.
 
-### npm run pack:web
+将html5项目打包到web/build文件夹中：
+```
+npm run pack:web
+```
 
-Packaging html5 project into `web/build` folder.
+### 效果图
+一开始规划的效果图如下，三端尽量会往这方向靠(目前正在调试兼容等)：
+![效图片](configs/effect.gif)
 
-### npm run test
-
-Starts the test runner.
