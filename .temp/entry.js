@@ -17,5 +17,5 @@ Vue.component('RichText', RichText)
 
 new Vue(Vue.util.extend({el: '#root', router}, App));
 
-router.push('/article?id=130&name=测试');
+router.push('/');
 

@@ -1,7 +1,7 @@
 <template>
     <div class="footer">
         <div v-for="item of list" @click="jumpPath('/'+item.path)" class="footer-li">
-            <text :class="['footer-icon',{'on-icon':item.on}]" v-html="item.icon">&#xe202;</text>
+            <text :class="['footer-icon',{'on-icon':item.on}]">{{item.icon}}</text>
             <text :class="['footer-text',{'on-text':item.on}]">{{item.name}}</text>
         </div>
     </div>
@@ -13,17 +13,17 @@
                 list: [{
                     name: '首页',
                     path: 'home',
-                    icon:'&#xe201;',
+                    icon:'\ue201',
                     on: false
                 }, {
                     name: '分类',
                     path: 'type',
-                    icon:'&#xe202;',
+                    icon:'\ue202',
                     on: false
                 }, {
                     name: '关于我',
                     path: 'me',
-                    icon:'&#xe203;',
+                    icon:'\ue203',
                     on: false
                 }]
             }
@@ -32,9 +32,6 @@
             '$route.path': 'routerChange'
         },
         methods: {
-            checkOn(cls,bloon){
-                return cls+' '+cls+'-on';
-            },
             // 跳转
             jumpPath(path) {
                 this.$router.push(path)

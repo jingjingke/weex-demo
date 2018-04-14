@@ -3654,22 +3654,22 @@ exports.default = {
             list: [{
                 name: '前端笔记',
                 style: 'notes',
-                icon: '&#xe102;',
+                icon: '\uE102',
                 id: '1'
             }, {
                 name: '网页作品',
                 style: 'works',
-                icon: '&#xe105;',
+                icon: '\uE105',
                 id: '2'
             }, {
                 name: '转载分享',
                 style: 'share',
-                icon: '&#xe103;',
+                icon: '\uE103',
                 id: '5'
             }, {
                 name: '生活锁事',
                 style: 'life',
-                icon: '&#xe104;',
+                icon: '\uE104',
                 id: '3'
             }]
         };
@@ -3704,14 +3704,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         }
       }
     }, [_c('text', {
-      directives: [{
-        name: "html",
-        rawName: "v-html",
-        value: (item.icon),
-        expression: "item.icon"
-      }],
       staticClass: ["section-icon"]
-    }), _c('text', {
+    }, [_vm._v(_vm._s(item.icon))]), _c('text', {
       class: ['section-text', {
         'bor-r-no': index === _vm.list.length - 1
       }]
@@ -3913,17 +3907,17 @@ exports.default = {
             list: [{
                 name: '首页',
                 path: 'home',
-                icon: '&#xe201;',
+                icon: '\uE201',
                 on: false
             }, {
                 name: '分类',
                 path: 'type',
-                icon: '&#xe202;',
+                icon: '\uE202',
                 on: false
             }, {
                 name: '关于我',
                 path: 'me',
-                icon: '&#xe203;',
+                icon: '\uE203',
                 on: false
             }]
         };
@@ -3933,10 +3927,6 @@ exports.default = {
         '$route.path': 'routerChange'
     },
     methods: {
-        checkOn: function checkOn(cls, bloon) {
-            return cls + ' ' + cls + '-on';
-        },
-
         // 跳转
         jumpPath: function jumpPath(path) {
             this.$router.push(path);
@@ -3974,16 +3964,10 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         }
       }
     }, [_c('text', {
-      directives: [{
-        name: "html",
-        rawName: "v-html",
-        value: (item.icon),
-        expression: "item.icon"
-      }],
       class: ['footer-icon', {
         'on-icon': item.on
       }]
-    }, [_vm._v("")]), _c('text', {
+    }, [_vm._v(_vm._s(item.icon))]), _c('text', {
       class: ['footer-text', {
         'on-text': item.on
       }]

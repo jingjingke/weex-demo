@@ -1,7 +1,7 @@
 <template>
     <div class="section">
         <div class="section-li" v-for="(item,index) of list" @click="goColumnList(item.id,item.name)">
-            <text class="section-icon" v-html="item.icon"></text>
+            <text class="section-icon">{{item.icon}}</text>
             <text :class="['section-text',{'bor-r-no':index === list.length-1}]">{{item.name}}</text>
         </div>
     </div>
@@ -13,22 +13,22 @@
                 list: [{
                     name: '前端笔记',
                     style: 'notes',
-                    icon: '&#xe102;',
+                    icon: '\ue102',
                     id: '1'
                 }, {
                     name: '网页作品',
                     style: 'works',
-                    icon: '&#xe105;',
+                    icon: '\ue105',
                     id: '2'
                 }, {
                     name: '转载分享',
                     style: 'share',
-                    icon: '&#xe103;',
+                    icon: '\ue103',
                     id: '5'
                 }, {
                     name: '生活锁事',
                     style: 'life',
-                    icon: '&#xe104;',
+                    icon: '\ue104',
                     id: '3'
                 }]
             }
@@ -88,50 +88,4 @@
     .bor-r-no {
         border-right-width: 0;
     }
-
-    /*
-    .section-li:after {
-        position: absolute;
-        content: '';
-        top: 20px;
-        left: 50%;
-        margin-left: -32px;
-        width: 64px;
-        height: 64px;
-        border-radius: 100%;
-        background: #0aba07;
-    }
-
-    .section-li:before {
-        font-size: 36px;
-        font-family: 'iconfont';
-        content: '';
-        display: block;
-        height: 100px;
-        line-height: 100px;
-        padding-top: 4px;
-        color: #fff;
-        position: relative;
-        z-index: 2;
-    }
-
-    .notes:before {
-        content: '\e102';
-    }
-
-    .works:before {
-        content: '\e105';
-    }
-
-    .share:before {
-        content: '\e103';
-    }
-
-    .life:before {
-        content: '\e104';
-    }
-
-
-
-    */
 </style>
