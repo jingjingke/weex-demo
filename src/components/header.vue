@@ -52,7 +52,7 @@
         width: 90px;
         line-height: 90px;
         height: 90px;
-        font-family: 'iconfont';
+        font-family: iconfont;
         font-size: 36px;
         text-align: center;
     }

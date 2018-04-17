@@ -44,7 +44,7 @@
         left: 50%;
         margin-top: -80px;
         margin-left: -50px;
-        font-family: "iconfont";
+        font-family: iconfont;
         font-size: 100px;
         line-height: 100px;
         text-align: center;

@@ -72,7 +72,7 @@
         align-items:stretch;
     }
     .footer-icon {
-        font-family: 'iconfont';
+        font-family: iconfont;
         text-align: center;
         font-size: 44px;
         line-height: 70px;

@@ -3220,7 +3220,7 @@ module.exports = {
     "left": 50,
     "marginTop": "-80",
     "marginLeft": "-50",
-    "fontFamily": "\"iconfont\"",
+    "fontFamily": "iconfont",
     "fontSize": "100",
     "lineHeight": "100",
     "textAlign": "center",
@@ -3313,7 +3313,7 @@ module.exports = {
     "width": "90",
     "lineHeight": "90",
     "height": "90",
-    "fontFamily": "'iconfont'",
+    "fontFamily": "iconfont",
     "fontSize": "36",
     "textAlign": "center"
   },
@@ -3604,7 +3604,7 @@ module.exports = {
     "textAlign": "center"
   },
   "section-icon": {
-    "fontFamily": "'iconfont'",
+    "fontFamily": "iconfont",
     "width": "70",
     "height": "70",
     "lineHeight": "70",
@@ -3859,7 +3859,7 @@ module.exports = {
     "alignItems": "stretch"
   },
   "footer-icon": {
-    "fontFamily": "'iconfont'",
+    "fontFamily": "iconfont",
     "textAlign": "center",
     "fontSize": "44",
     "lineHeight": "70",

@@ -68,7 +68,7 @@
     }
 
     .section-icon {
-        font-family: 'iconfont';
+        font-family: iconfont;
         width: 70px;
         height: 70px;
         line-height: 70px;
