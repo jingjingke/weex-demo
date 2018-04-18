@@ -51,16 +51,16 @@
 
     .type-list {
         padding-right: 24px;
-        margin-top: 18px;
         margin-bottom: 32px;
         flex-direction:row;
+        flex-wrap:wrap;
     }
 
     .type-tag {
         height: 60px;
         line-height: 60px;
         padding: 0 24px;
-        margin-left: 24px;
+        margin: 18px 0 0 24px;
         border-width: 1px;
         border-color: #e8e8e8;
         border-radius: 12px;

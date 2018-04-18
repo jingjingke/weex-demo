@@ -4250,9 +4250,9 @@ module.exports = {
   },
   "type-list": {
     "paddingRight": "24",
-    "marginTop": "18",
     "marginBottom": "32",
-    "flexDirection": "row"
+    "flexDirection": "row",
+    "flexWrap": "wrap"
   },
   "type-tag": {
     "height": "60",
@@ -4261,6 +4261,9 @@ module.exports = {
     "paddingRight": "24",
     "paddingBottom": 0,
     "paddingLeft": "24",
+    "marginTop": "18",
+    "marginRight": 0,
+    "marginBottom": 0,
     "marginLeft": "24",
     "borderWidth": "1",
     "borderColor": "#e8e8e8",
