@@ -1,5 +1,5 @@
 <template>
-    <slider class="slider" interval="3000" auto-play="true" show-indicators="true">
+    <slider class="slider" interval="3000" auto-play="true">
         <div class="frame" v-for="img in data" @click="goArticle(img.aid,img.title)">
             <image class="image" resize="cover" :src="'http://www.jingjingke.com/'+ img.litpic" alt="img.title"></image>
         </div>
@@ -22,25 +22,22 @@
     }
 </script>
 <style scoped>
+    .slider,.frame,.image {
+        width: 750px;
+        height: 400px;
+    }
     .slider {
-        width: 760px;
-        height: 400px;
-    }
-
-    .frame {
-        width: 760px;
-        height: 400px;
-    }
-
-    .image {
-        width: 760px;
-        height: 400px;
+        position: relative;
     }
 
     .indicator {
-        bottom: 10px;
-        width:760px;
-        item-color: #ccc;
+        position: absolute;
+        left: 0;
+        right:0;
+        bottom: 0;
+        width:750px;
+        height: 90px;
+        item-color: #eee;
         item-selected-color: #0aba07;
     }
 </style>

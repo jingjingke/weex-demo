@@ -3445,21 +3445,26 @@ module.exports = __vue_exports__
 
 module.exports = {
   "slider": {
-    "width": "760",
-    "height": "400"
+    "width": "750",
+    "height": "400",
+    "position": "relative"
   },
   "frame": {
-    "width": "760",
+    "width": "750",
     "height": "400"
   },
   "image": {
-    "width": "760",
+    "width": "750",
     "height": "400"
   },
   "indicator": {
-    "bottom": "10",
-    "width": "760",
-    "itemColor": "#cccccc",
+    "position": "absolute",
+    "left": 0,
+    "right": 0,
+    "bottom": 0,
+    "width": "750",
+    "height": "90",
+    "itemColor": "#eeeeee",
     "itemSelectedColor": "#0aba07"
   }
 }
@@ -3506,8 +3511,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: ["slider"],
     attrs: {
       "interval": "3000",
-      "autoPlay": "true",
-      "showIndicators": "true"
+      "autoPlay": "true"
     }
   }, [_vm._l((_vm.data), function(img) {
     return _c('div', {
