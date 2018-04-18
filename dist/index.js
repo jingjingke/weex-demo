@@ -3963,13 +3963,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         }
       }
     }, [_c('text', {
-      class: ['footer-icon', {
-        'on-icon': item.on
-      }]
+      class: ['footer-icon', item.on ? 'on-icon' : '']
     }, [_vm._v(_vm._s(item.icon))]), _c('text', {
-      class: ['footer-text', {
-        'on-text': item.on
-      }]
+      class: ['footer-text', item.on ? 'on-text' : '']
     }, [_vm._v(_vm._s(item.name))])])
   }))
 },staticRenderFns: []}

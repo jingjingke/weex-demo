@@ -1,8 +1,8 @@
 <template>
     <div class="footer">
         <div v-for="item of list" @click="jumpPath('/'+item.path)" class="footer-li">
-            <text :class="['footer-icon',{'on-icon':item.on}]">{{item.icon}}</text>
-            <text :class="['footer-text',{'on-text':item.on}]">{{item.name}}</text>
+            <text :class="['footer-icon',item.on?'on-icon':'']">{{item.icon}}</text>
+            <text :class="['footer-text',item.on?'on-text':'']">{{item.name}}</text>
         </div>
     </div>
 </template>
