@@ -3213,17 +3213,11 @@ exports.default = {
 
 module.exports = {
   "loading-dialog": {
-    "width": "100",
-    "height": "100",
-    "position": "fixed",
-    "top": 50,
-    "left": 50,
-    "marginTop": "-80",
-    "marginLeft": "-50",
+    "width": "750",
+    "marginTop": "400",
     "fontFamily": "iconfont",
-    "fontSize": "100",
-    "lineHeight": "100",
     "textAlign": "center",
+    "fontSize": "100",
     "color": "#eeeeee"
   }
 }
@@ -3263,7 +3257,8 @@ exports.default = {
                     transform: 'rotate(' + this.rotateValue + 'deg)',
                     transformOrigin: 'center center'
                 },
-                duration: 30000000
+                duration: 30000000,
+                timingFunction: 'linear'
             });
         }
     },
@@ -3284,7 +3279,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   return _c('div', [(_vm.status) ? _c('text', {
     ref: "load",
     staticClass: ["loading-dialog"]
-  }, [_vm._v("")]) : _vm._t("default")], 2)
+  }, [_vm._v("")]) : _vm._e(), (!_vm.status) ? _vm._t("default") : _vm._e()], 2)
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 

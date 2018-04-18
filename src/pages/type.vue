@@ -66,7 +66,7 @@
         created() {
             this.getTypeList().then(() => {
                 this.getTagList().then(() => {
-                    this.isAjax = false
+                    this.isAjax = false;
                 })
             })
         }

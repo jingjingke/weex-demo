@@ -1,7 +1,7 @@
 <template>
     <div>
         <text v-if="status" class="loading-dialog" ref="load">&#xe100;</text>
-        <slot v-else></slot>
+        <slot v-if="!status"></slot>
     </div>
 </template>
 <script>
@@ -22,7 +22,8 @@
                         transform: 'rotate(' + this.rotateValue + 'deg)',
                         transformOrigin: 'center center'
                     },
-                    duration: 30000000
+                    duration: 30000000,
+                    timingFunction: 'linear'
                 })
             }
         },
@@ -37,17 +38,11 @@
 </script>
 <style scoped>
     .loading-dialog {
-        width: 100px;
-        height: 100px;
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        margin-top: -80px;
-        margin-left: -50px;
+        width: 750px;
+        margin-top: 400px;
         font-family: iconfont;
-        font-size: 100px;
-        line-height: 100px;
         text-align: center;
+        font-size: 100px;
         color: #eee;
     }
 </style>
