@@ -3214,10 +3214,10 @@ exports.default = {
 module.exports = {
   "loading-dialog": {
     "width": "750",
-    "marginTop": "400",
     "fontFamily": "iconfont",
     "textAlign": "center",
-    "fontSize": "100",
+    "fontSize": "64",
+    "lineHeight": "130",
     "color": "#eeeeee"
   }
 }
@@ -3279,7 +3279,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   return _c('div', [(_vm.status) ? _c('text', {
     ref: "load",
     staticClass: ["loading-dialog"]
-  }, [_vm._v("")]) : _vm._e(), (!_vm.status) ? _vm._t("default") : _vm._e()], 2)
+  }, [_vm._v("")]) : _vm._t("default")], 2)
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 

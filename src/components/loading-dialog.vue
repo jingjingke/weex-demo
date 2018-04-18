@@ -1,7 +1,7 @@
 <template>
     <div>
         <text v-if="status" class="loading-dialog" ref="load">&#xe100;</text>
-        <slot v-if="!status"></slot>
+        <slot v-else="!status"></slot>
     </div>
 </template>
 <script>
@@ -39,10 +39,10 @@
 <style scoped>
     .loading-dialog {
         width: 750px;
-        margin-top: 400px;
         font-family: iconfont;
         text-align: center;
-        font-size: 100px;
+        font-size: 64px;
+        line-height: 130px;
         color: #eee;
     }
 </style>
