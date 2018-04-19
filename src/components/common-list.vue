@@ -1,7 +1,7 @@
 <template>
     <div class="list-warp">
         <div class="list-block" v-for="(item,index) of data" :key="item.aid" @click="goArticle(item.aid,item.title)">
-            <img class="list-img" :src="'http://www.jingjingke.com/'+item.litpic">
+            <image class="list-img" :src="'http://www.jingjingke.com/'+item.litpic"></image>
             <div class="list-text">
                 <text class="list-title">{{item.title}}</text>
                 <text class="list-des">{{item.description.substring(0,24)}}{{item.description.length>24?"...":""}}</text>

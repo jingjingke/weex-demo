@@ -3819,7 +3819,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
           _vm.goArticle(item.aid, item.title)
         }
       }
-    }, [_c('img', {
+    }, [_c('image', {
       staticClass: ["list-img"],
       attrs: {
         "src": 'http://www.jingjingke.com/' + item.litpic
@@ -4595,7 +4595,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: ["about-me"]
   }, [_c('div', {
     staticClass: ["about-warp"]
-  }, [_c('img', {
+  }, [_c('image', {
     staticClass: ["avatar"],
     attrs: {
       "src": "https://avatars2.githubusercontent.com/u/24471671?s=460&v=4"

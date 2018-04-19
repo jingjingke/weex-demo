@@ -1,7 +1,7 @@
 <template>
     <div class="about-me">
         <div class="about-warp">
-            <img src="https://avatars2.githubusercontent.com/u/24471671?s=460&v=4" class="avatar">
+            <image src="https://avatars2.githubusercontent.com/u/24471671?s=460&v=4" class="avatar"></image>
             <div>
                 <div class="about-des">
                     <text class="des-label">昵称</text>
