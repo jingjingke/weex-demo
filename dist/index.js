@@ -3240,6 +3240,7 @@ Object.defineProperty(exports, "__esModule", {
 //
 
 var animation = weex.requireModule('animation');
+var modal = weex.requireModule('modal');
 
 exports.default = {
     data: function data() {
@@ -3251,23 +3252,26 @@ exports.default = {
     props: ['status'],
     methods: {
         loadDelay: function loadDelay(el) {
-            this.rotateValue += 7200000;
+            this.rotateValue += 360;
             animation.transition(el, {
                 styles: {
                     transform: 'rotate(' + this.rotateValue + 'deg)',
                     transformOrigin: 'center center'
                 },
-                duration: 30000000,
-                timingFunction: 'linear'
+                duration: 1000,
+                timingFunction: 'ease-in-out',
+                delay: 0
             });
         }
     },
     mounted: function mounted() {
+        var _this = this;
+
         var load = this.$refs.load;
         this.loadDelay(load);
-        // setInterval(() => {
-        //     this.loadDelay(load)
-        // }, 300000)
+        setInterval(function () {
+            _this.loadDelay(load);
+        }, 1000);
     }
 };
 
@@ -3279,7 +3283,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   return _c('div', [(_vm.status) ? _c('text', {
     ref: "load",
     staticClass: ["loading-dialog"]
-  }, [_vm._v("")]) : _vm._t("default")], 2)
+  }, [_vm._v("")]) : _vm._e(), (!_vm.status) ? _vm._t("default") : _vm._e()], 2)
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 

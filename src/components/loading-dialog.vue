@@ -1,11 +1,12 @@
 <template>
     <div>
-        <text v-if="status" class="loading-dialog" ref="load">&#xe100;</text>
-        <slot v-else="!status"></slot>
+        <text v-if='status' class="loading-dialog" ref="load">&#xe100;</text>
+        <slot v-if="!status"></slot>
     </div>
 </template>
 <script>
     const animation = weex.requireModule('animation')
+    const modal = weex.requireModule('modal')
 
     export default {
         data() {
@@ -16,23 +17,24 @@
         props: ['status'],
         methods: {
             loadDelay(el) {
-                this.rotateValue += 7200000;
+                this.rotateValue += 360;
                 animation.transition(el, {
                     styles: {
                         transform: 'rotate(' + this.rotateValue + 'deg)',
-                        transformOrigin: 'center center'
+                        transformOrigin: 'center center',
                     },
-                    duration: 30000000,
-                    timingFunction: 'linear'
+                    duration: 1000,
+                    timingFunction: 'ease-in-out',
+                    delay: 0
                 })
             }
         },
         mounted() {
             const load = this.$refs.load;
             this.loadDelay(load)
-            // setInterval(() => {
-            //     this.loadDelay(load)
-            // }, 300000)
+            setInterval(() => {
+                this.loadDelay(load)
+            }, 1000)
         }
     }
 </script>
