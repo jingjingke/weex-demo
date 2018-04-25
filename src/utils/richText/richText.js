@@ -1,7 +1,7 @@
 function richTextParse(data) {
     //支持标签
     //	let nameArr = ['a','abbr','b','blockquote','br','code','col','colgroup','dd','del','div','dl','dt','em','fieldset','h1','h2','h3','h4','h5','h6','hr','i','img','ins','label','legend','li','ol','p','q','span','strong','sub','sup','table','tbody','td','tfoot','th','thead','tr','ul'];
-    let nameArr = ['a', 'b', 'code', 'dd', 'div', 'dl', 'dt', 'em', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'i', 'img', 'label', 'li', 'ol', 'p', 'span', 'strong', 'sub', 'sup', 'table', 'tbody', 'td', 'tfoot', 'th', 'thead', 'tr', 'ul'];
+    let nameArr = ['a', 'b', 'code', 'dd', 'div', 'dl', 'dt', 'em', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'i', 'img', 'label', 'li', 'ol', 'p','pre', 'span', 'strong', 'sub', 'sup', 'table', 'tbody', 'td', 'tfoot', 'th', 'thead', 'tr', 'ul'];
     //最终结构树
     let tree = [];
     //初索引
@@ -28,7 +28,6 @@ function richTextParse(data) {
         tree[index] = sendInfoTree(i)
         index++;
     }
-
     return tree;
 
     //将元素添加到tree中
@@ -48,8 +47,10 @@ function richTextParse(data) {
             //判断如果是img特殊标签
             obj.attrs['src'] = src;
             obj.attrs['alt'] = alt;
-            obj.attrs['width'] = width;
-            obj.attrs['height'] = height;
+            getImgSize(src).then((size)=>{
+                obj.attrs['width'] = size.width
+                obj.attrs['height'] = size.height
+            })
         }else if (step === 0) {
             //判断是否为单闭合标签（除img外的单闭合标签）-清空内容-方便处理
             obj.children.push({
@@ -60,7 +61,7 @@ function richTextParse(data) {
             //判断紧跟它的下一个标签是否为它的闭合标签
             obj.children.push({
                 type: 'text',
-                text: data.substring(indexArr[idx], indexArr[idx + 1])
+                text:replaceStr(data.substring(indexArr[idx], indexArr[idx + 1]))
             })
             //索引指向闭合标签
             i++;
@@ -70,7 +71,7 @@ function richTextParse(data) {
             if (indexArr[idx] !== indexArr[idx + 1]) {
                 obj.children.push({
                     type: 'text',
-                    text: data.substring(indexArr[idx], indexArr[idx + 1])
+                    text: replaceStr(data.substring(indexArr[idx], indexArr[idx + 1]))
                 })
             }
             //循环向下去找
@@ -81,7 +82,7 @@ function richTextParse(data) {
                 if (indexArr[i - 1] !== indexArr[i]) {
                     obj.children.push({
                         type: 'text',
-                        text: data.substring(indexArr[i - 1], indexArr[i])
+                        text: replaceStr(data.substring(indexArr[i - 1], indexArr[i]))
                     })
                 }
                 //如果下一个是该结束的话则跳出
@@ -93,7 +94,13 @@ function richTextParse(data) {
             obj.children[obj.children.length-1].text += '（打不开？请复制链接：' + href + '）';
         }
         i++;
+
         return obj;
+    }
+
+    // 清理无用标签空格等
+    function replaceStr(str){
+        return str.replace(/^\s+|\s+$/g, '');
     }
 
     //获取基本信息
@@ -108,8 +115,6 @@ function richTextParse(data) {
         if (str.match(/<*([^> ]*)/)[1] === 'img') {
             src = matchRule(str, 'src');
             alt = matchRule(str, 'alt');
-            width = matchRule(str, 'width');
-            height = matchRule(str, 'height');
         }else if(str.match(/<*([^> ]*)/)[1] === 'a'){
             href = matchRule(str, 'href');
         }
@@ -136,6 +141,19 @@ function richTextParse(data) {
             }
         }
         return name;
+    }
+    // 获取图像尺寸
+    function getImgSize(src){
+        return new Promise((s,e)=>{
+            let obj = {}
+            let newImg = document.createElement('img');
+            newImg.src = src;
+            newImg.onload = function(event){
+                obj.width = event.target.naturalWidth;
+                obj.height = event.target.naturalHeight;
+                s(obj)
+            }
+        })
     }
 }
 

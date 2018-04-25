@@ -88,7 +88,7 @@
 
     .article-title {
         font-size: 32px;
-        line-height: 1.8em;
+        line-height: 56px;
         padding: 24px;
         border-bottom-width: 1px;
         border-bottom-color: #f0f0f0;
@@ -103,10 +103,8 @@
     }
 
     .article-text {
-        line-height: 1.8em;
-        padding-top: 24px;
-        padding-left: 24px;
-        padding-right: 24px;
+        padding: 24px 24px 0;
+        line-height: 52px;
     }
 
     .article-keys {
@@ -117,13 +115,14 @@
     .article-tag-warp {
         padding: 36px 12px 36px 24px;
         flex-direction: row;
+        flex-wrap:wrap;
     }
 
     .article-tag {
         height: 60px;
         line-height: 60px;
         padding: 0 24px;
-        margin-left: 12px;
+        margin: 12px 12px 0 0;
         border-width: 1px;
         border-color: #f2f2f2;
         border-radius: 8px;

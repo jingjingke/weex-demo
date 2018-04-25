@@ -1,113 +1,136 @@
 <template>
-    <image v-if="data.name === 'img'" resize="stretch" :alt="data.attrs.alt||''" :src="data.attrs.src"
-           :class="data.attrs.class" @load="loadImg" :style="'width:700px;height:'+imgH+'px'"></image>
-    <div v-else-if="data.children !== undefined" :class="data.attrs.class">
-        <RichText v-for="(item,index) of data.children" :data="item" :key="index"></RichText>
+    <image v-if="data.name === 'img'" resize="stretch" :alt="data.attrs.alt || ''" :src="data.attrs.src"
+           class="rich-img" @load="loadImg" :style="styleObject"></image>
+    <div v-else-if="data.children !== undefined && !(data.children.length ===1 && data.children[0].text === '')"
+         :class="['rich-'+data.name]">
+        <RichText v-for="(item,index) of data.children" :data="item" :key="index" :label="data.name"></RichText>
     </div>
-    <text v-else v-show="isShow" v-html="checkStr(data)"></text>
+    <text v-else-if="data.text !== ''" :class="['rich-text','rich-'+label+'-text']">{{escape2Html(label,data.text)}}</text>
 </template>
 <script>
     export default {
         data() {
             return {
                 isShow: false,
-                imgH: '',
+                styleObject: {
+                    height: '300px'
+                }
             }
         },
-        props: ['data'],
+        props: ['data', 'label'],
         methods: {
-            checkStr(data) {
-                // 去掉首尾空格
-                let reStr = data.text.replace(/^\s+|\s+$/g, '');
-                if (reStr !== '') {
-                    this.isShow = true;
+            checkStyle(obj) {
+                if (obj !== undefined) {
+                    return obj.class || ''
+                } else {
+                    return ''
                 }
-                return reStr;
+            },
+            escape2Html(label,str) {
+                // 转化富文本标签（pre）
+                if(label === 'pre'){
+                    let arrEntities = {'lt': '<', 'gt': '>', 'nbsp': ' ', 'amp': '&', 'quot': '"'};
+                    return str.replace(/&(lt|gt|nbsp|amp|quot);/ig, function (all, t) {
+                        return arrEntities[t];
+                    })
+                }else{
+                    return str
+                }
             },
             loadImg(event) {
-                if (event.success) {
-                    this.imgH = 700 * event.size.naturalHeight /event.size.naturalWidth;
+                let size = 300;
+                if(!(event === undefined || event.size === undefined || event.size.naturalHeight===undefined)){
+                    size = 700 * event.size.naturalHeight / event.size.naturalWidth;
+                }
+                this.styleObject = {
+                    height: size + 'px'
                 }
             }
         }
     }
 </script>
 <style scoped>
-    /* 段落等常用块元素 */
-    .rich-p .weex-text, .rich-h1 .weex-text, .rich-h2 .weex-text, .rich-h3 .weex-text, .rich-h4 .weex-text, .rich-h5 .weex-text,
-    .rich-h6 .weex-text, .rich-div .weex-text, .rich-li .weex-text {
-        padding-right: 24px;
-        padding-left: 24px;
-        margin-top: 24px;
-        line-height: 1.8em;
-        word-break: break-all;
-    }
-
     .rich-img {
+        width: 700px;
+        height: 300px;
+        margin: 24px 0 0 25px;
+    }
+
+    .rich-text {
+        padding: 0 24px;
+        word-break: break-all;
         margin-top: 24px;
-        margin-left: 24px;
     }
 
-    .rich-h1 .weex-text {
+    .rich-p-text, .rich-div-text, .rich-h3-text, .rich-h4-text {
+        line-height: 52px;
+    }
+
+    .rich-pre-text {
+        font-size: 24px;
+        white-space: pre-wrap;
+        color: #666;
+        background-color: #f8f8f8;
+        padding: 24px;
+        margin: 24px 24px 0;
+    }
+
+    .rich-h1-text {
         font-size: 36px;
+        line-height: 64px;
         font-weight: bold;
     }
 
-    .rich-h2 .weex-text {
+    .rich-h2-text {
         font-size: 32px;
+        line-height: 54px;
         font-weight: bold;
     }
 
-    .rich-h3 .weex-text {
+    .rich-h3-text {
         font-weight: bold;
     }
-    /* a标签 */
-    .rich-a .weex-text {
+
+    .rich-a-text {
         color: #ba3022;
     }
-    .rich-a .weex-div,.rich-a .weex-text {
-        display: inline;
-    }
-    /* pre */
-    .rich-pre .weex-text {
-        background: #fafafa;
-        padding: 20px;
-        margin-left: 24px;
-        margin-right: 24px;
-        margin-top: 24px;
-        font-size: 26px;
-        line-height: 2em;
-        color: #888;
-        white-space: pre-wrap;
+
+    .rich-none {
+        display: none;
+        opacity: 0;
+        width: 0;
+        height: 0;
+        line-height: 0;
     }
 
-    /* 表格 */
     .rich-table {
-        margin-top: 24px;
-        margin-left: 24px;
-        margin-right: 24px;
-        border-top: 1px solid #ddd;
-        border-left: 1px solid #ddd;
+        margin: 24px 24px 0;
+        border-color: #ddd;
+        border-top-width: 1px;
+        border-left-width: 1px;
     }
 
     .rich-tr {
         flex-direction: row;
-        overflow: hidden;
+        align-items: stretch;
+        border-color: #ddd;
+        border-bottom-width: 1px;
     }
 
-    .rich-td {
-        border-bottom: 1px solid #ddd;
-        border-right: 1px solid #ddd;
-        flex-grow: 1;
-        flex-basis: 0%;
-        display: inline;
-        line-height: 1.5em;
-        padding-top: 12px;
-        padding-bottom: 12px;
+    .rich-td, .rich-th {
+        flex: 1;
+        border-color: #ddd;
+        border-right-width: 1px;
     }
 
-    .rich-table .weex-text {
+    .rich-td-text, .rich-th-text {
         font-size: 24px;
         text-align: center;
+        margin: 0;
+        padding: 6px;
+    }
+
+    .rich-th-text {
+        background-color: #fafafa;
     }
 </style>

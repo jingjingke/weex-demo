@@ -59,6 +59,7 @@
         border-radius: 20px;
         margin-right: 24px;
         overflow: hidden;
+        background-color: #f2f2f2;
     }
     .about-des {
         color: #333;

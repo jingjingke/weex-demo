@@ -399,29 +399,117 @@ module.exports = __vue_exports__
 
 module.exports = {
   "rich-img": {
+    "width": "700",
+    "height": "300",
     "marginTop": "24",
+    "marginRight": 0,
+    "marginBottom": 0,
+    "marginLeft": "25"
+  },
+  "rich-text": {
+    "paddingTop": 0,
+    "paddingRight": "24",
+    "paddingBottom": 0,
+    "paddingLeft": "24",
+    "wordBreak": "break-all",
+    "marginTop": "24"
+  },
+  "rich-p-text": {
+    "lineHeight": "52"
+  },
+  "rich-div-text": {
+    "lineHeight": "52"
+  },
+  "rich-h3-text": {
+    "lineHeight": "52",
+    "fontWeight": "bold"
+  },
+  "rich-h4-text": {
+    "lineHeight": "52"
+  },
+  "rich-pre-text": {
+    "fontSize": "24",
+    "whiteSpace": "pre-wrap",
+    "color": "#666666",
+    "backgroundColor": "#f8f8f8",
+    "paddingTop": "24",
+    "paddingRight": "24",
+    "paddingBottom": "24",
+    "paddingLeft": "24",
+    "marginTop": "24",
+    "marginRight": "24",
+    "marginBottom": 0,
     "marginLeft": "24"
+  },
+  "rich-h1-text": {
+    "fontSize": "36",
+    "lineHeight": "64",
+    "fontWeight": "bold"
+  },
+  "rich-h2-text": {
+    "fontSize": "32",
+    "lineHeight": "54",
+    "fontWeight": "bold"
+  },
+  "rich-a-text": {
+    "color": "#ba3022"
+  },
+  "rich-none": {
+    "display": "none",
+    "opacity": 0,
+    "width": 0,
+    "height": 0,
+    "lineHeight": 0
   },
   "rich-table": {
     "marginTop": "24",
-    "marginLeft": "24",
     "marginRight": "24",
-    "borderTop": "1px solid #ddd",
-    "borderLeft": "1px solid #ddd"
+    "marginBottom": 0,
+    "marginLeft": "24",
+    "borderColor": "#dddddd",
+    "borderTopWidth": "1",
+    "borderLeftWidth": "1"
   },
   "rich-tr": {
     "flexDirection": "row",
-    "overflow": "hidden"
+    "alignItems": "stretch",
+    "borderColor": "#dddddd",
+    "borderBottomWidth": "1"
   },
   "rich-td": {
-    "borderBottom": "1px solid #ddd",
-    "borderRight": "1px solid #ddd",
-    "flexGrow": 1,
-    "flexBasis": 0,
-    "display": "inline",
-    "lineHeight": 1.5,
-    "paddingTop": "12",
-    "paddingBottom": "12"
+    "flex": 1,
+    "borderColor": "#dddddd",
+    "borderRightWidth": "1"
+  },
+  "rich-th": {
+    "flex": 1,
+    "borderColor": "#dddddd",
+    "borderRightWidth": "1"
+  },
+  "rich-td-text": {
+    "fontSize": "24",
+    "textAlign": "center",
+    "marginTop": 0,
+    "marginRight": 0,
+    "marginBottom": 0,
+    "marginLeft": 0,
+    "paddingTop": "6",
+    "paddingRight": "6",
+    "paddingBottom": "6",
+    "paddingLeft": "6"
+  },
+  "rich-th-text": {
+    "fontSize": "24",
+    "textAlign": "center",
+    "marginTop": 0,
+    "marginRight": 0,
+    "marginBottom": 0,
+    "marginLeft": 0,
+    "paddingTop": "6",
+    "paddingRight": "6",
+    "paddingBottom": "6",
+    "paddingLeft": "6",
+    "backgroundColor": "#fafafa"
   }
 }
 
@@ -443,29 +531,46 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 //
+//
 
 exports.default = {
     data: function data() {
         return {
             isShow: false,
-            imgH: ''
+            styleObject: {
+                height: '300px'
+            }
         };
     },
 
-    props: ['data'],
+    props: ['data', 'label'],
     methods: {
-        checkStr: function checkStr(data) {
-            // 去掉首尾空格
-            var reStr = data.text.replace(/^\s+|\s+$/g, '');
-            if (reStr !== '') {
-                this.isShow = true;
+        checkStyle: function checkStyle(obj) {
+            if (obj !== undefined) {
+                return obj.class || '';
+            } else {
+                return '';
             }
-            return reStr;
+        },
+        escape2Html: function escape2Html(label, str) {
+            // 转化富文本标签（pre）
+            if (label === 'pre') {
+                var arrEntities = { 'lt': '<', 'gt': '>', 'nbsp': ' ', 'amp': '&', 'quot': '"' };
+                return str.replace(/&(lt|gt|nbsp|amp|quot);/ig, function (all, t) {
+                    return arrEntities[t];
+                });
+            } else {
+                return str;
+            }
         },
         loadImg: function loadImg(event) {
-            if (event.success) {
-                this.imgH = 700 * event.size.naturalHeight / event.size.naturalWidth;
+            var size = 300;
+            if (!(event === undefined || event.size === undefined || event.size.naturalHeight === undefined)) {
+                size = 700 * event.size.naturalHeight / event.size.naturalWidth;
             }
+            this.styleObject = {
+                height: size + 'px'
+            };
         }
     }
 };
@@ -476,8 +581,8 @@ exports.default = {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return (_vm.data.name === 'img') ? _c('image', {
-    class: _vm.data.attrs.class,
-    style: 'width:700px;height:' + _vm.imgH + 'px',
+    staticClass: ["rich-img"],
+    style: _vm.styleObject,
     attrs: {
       "resize": "stretch",
       "alt": _vm.data.attrs.alt || '',
@@ -486,28 +591,19 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     on: {
       "load": _vm.loadImg
     }
-  }) : (_vm.data.children !== undefined) ? _c('div', {
-    class: _vm.data.attrs.class
+  }) : (_vm.data.children !== undefined && !(_vm.data.children.length === 1 && _vm.data.children[0].text === '')) ? _c('div', {
+    class: ['rich-' + _vm.data.name]
   }, _vm._l((_vm.data.children), function(item, index) {
     return _c('RichText', {
       key: index,
       attrs: {
-        "data": item
+        "data": item,
+        "label": _vm.data.name
       }
     })
-  })) : _c('text', {
-    directives: [{
-      name: "show",
-      rawName: "v-show",
-      value: (_vm.isShow),
-      expression: "isShow"
-    }, {
-      name: "html",
-      rawName: "v-html",
-      value: (_vm.checkStr(_vm.data)),
-      expression: "checkStr(data)"
-    }]
-  })
+  })) : (_vm.data.text !== '') ? _c('text', {
+    class: ['rich-text', 'rich-' + _vm.label + '-text']
+  }, [_vm._v(_vm._s(_vm.escape2Html(_vm.label, _vm.data.text)))]) : _vm._e()
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 
@@ -4547,7 +4643,8 @@ module.exports = {
     "height": "200",
     "borderRadius": "20",
     "marginRight": "24",
-    "overflow": "hidden"
+    "overflow": "hidden",
+    "backgroundColor": "#f2f2f2"
   },
   "about-des": {
     "color": "#333333",
@@ -5109,7 +5206,7 @@ module.exports = {
   },
   "article-title": {
     "fontSize": "32",
-    "lineHeight": 1.8,
+    "lineHeight": "56",
     "paddingTop": "24",
     "paddingRight": "24",
     "paddingBottom": "24",
@@ -5128,10 +5225,11 @@ module.exports = {
     "marginLeft": "25"
   },
   "article-text": {
-    "lineHeight": 1.8,
     "paddingTop": "24",
+    "paddingRight": "24",
+    "paddingBottom": 0,
     "paddingLeft": "24",
-    "paddingRight": "24"
+    "lineHeight": "52"
   },
   "article-keys": {
     "paddingBottom": "36",
@@ -5142,7 +5240,8 @@ module.exports = {
     "paddingRight": "12",
     "paddingBottom": "36",
     "paddingLeft": "24",
-    "flexDirection": "row"
+    "flexDirection": "row",
+    "flexWrap": "wrap"
   },
   "article-tag": {
     "height": "60",
@@ -5151,7 +5250,10 @@ module.exports = {
     "paddingRight": "24",
     "paddingBottom": 0,
     "paddingLeft": "24",
-    "marginLeft": "12",
+    "marginTop": "12",
+    "marginRight": "12",
+    "marginBottom": 0,
+    "marginLeft": 0,
     "borderWidth": "1",
     "borderColor": "#f2f2f2",
     "borderRadius": "8",
@@ -5248,7 +5350,7 @@ exports.default = {
 function richTextParse(data) {
     //支持标签
     //	let nameArr = ['a','abbr','b','blockquote','br','code','col','colgroup','dd','del','div','dl','dt','em','fieldset','h1','h2','h3','h4','h5','h6','hr','i','img','ins','label','legend','li','ol','p','q','span','strong','sub','sup','table','tbody','td','tfoot','th','thead','tr','ul'];
-    var nameArr = ['a', 'b', 'code', 'dd', 'div', 'dl', 'dt', 'em', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'i', 'img', 'label', 'li', 'ol', 'p', 'span', 'strong', 'sub', 'sup', 'table', 'tbody', 'td', 'tfoot', 'th', 'thead', 'tr', 'ul'];
+    var nameArr = ['a', 'b', 'code', 'dd', 'div', 'dl', 'dt', 'em', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'i', 'img', 'label', 'li', 'ol', 'p', 'pre', 'span', 'strong', 'sub', 'sup', 'table', 'tbody', 'td', 'tfoot', 'th', 'thead', 'tr', 'ul'];
     //最终结构树
     var tree = [];
     //初索引
@@ -5281,7 +5383,6 @@ function richTextParse(data) {
         tree[index] = sendInfoTree(i);
         index++;
     }
-
     return tree;
 
     //将元素添加到tree中
@@ -5300,8 +5401,10 @@ function richTextParse(data) {
             //判断如果是img特殊标签
             obj.attrs['src'] = src;
             obj.attrs['alt'] = alt;
-            obj.attrs['width'] = width;
-            obj.attrs['height'] = height;
+            getImgSize(src).then(function (size) {
+                obj.attrs['width'] = size.width;
+                obj.attrs['height'] = size.height;
+            });
         } else if (step === 0) {
             //判断是否为单闭合标签（除img外的单闭合标签）-清空内容-方便处理
             obj.children.push({
@@ -5312,7 +5415,7 @@ function richTextParse(data) {
             //判断紧跟它的下一个标签是否为它的闭合标签
             obj.children.push({
                 type: 'text',
-                text: data.substring(indexArr[idx], indexArr[idx + 1])
+                text: replaceStr(data.substring(indexArr[idx], indexArr[idx + 1]))
             });
             //索引指向闭合标签
             i++;
@@ -5322,7 +5425,7 @@ function richTextParse(data) {
             if (indexArr[idx] !== indexArr[idx + 1]) {
                 obj.children.push({
                     type: 'text',
-                    text: data.substring(indexArr[idx], indexArr[idx + 1])
+                    text: replaceStr(data.substring(indexArr[idx], indexArr[idx + 1]))
                 });
             }
             //循环向下去找
@@ -5333,7 +5436,7 @@ function richTextParse(data) {
                 if (indexArr[i - 1] !== indexArr[i]) {
                     obj.children.push({
                         type: 'text',
-                        text: data.substring(indexArr[i - 1], indexArr[i])
+                        text: replaceStr(data.substring(indexArr[i - 1], indexArr[i]))
                     });
                 }
                 //如果下一个是该结束的话则跳出
@@ -5345,7 +5448,13 @@ function richTextParse(data) {
             obj.children[obj.children.length - 1].text += '（打不开？请复制链接：' + href + '）';
         }
         i++;
+
         return obj;
+    }
+
+    // 清理无用标签空格等
+    function replaceStr(str) {
+        return str.replace(/^\s+|\s+$/g, '');
     }
 
     //获取基本信息
@@ -5360,8 +5469,6 @@ function richTextParse(data) {
         if (str.match(/<*([^> ]*)/)[1] === 'img') {
             src = matchRule(str, 'src');
             alt = matchRule(str, 'alt');
-            width = matchRule(str, 'width');
-            height = matchRule(str, 'height');
         } else if (str.match(/<*([^> ]*)/)[1] === 'a') {
             href = matchRule(str, 'href');
         }
@@ -5388,6 +5495,19 @@ function richTextParse(data) {
             }
         }
         return name;
+    }
+    // 获取图像尺寸
+    function getImgSize(src) {
+        return new Promise(function (s, e) {
+            var obj = {};
+            var newImg = document.createElement('img');
+            newImg.src = src;
+            newImg.onload = function (event) {
+                obj.width = event.target.naturalWidth;
+                obj.height = event.target.naturalHeight;
+                s(obj);
+            };
+        });
     }
 }
 
