@@ -1,6 +1,6 @@
 <template>
     <div class="about-me">
-        <div class="about-warp">
+        <div class="about-warp warp-row">
             <image src="https://avatars2.githubusercontent.com/u/24471671?s=460&v=4" class="avatar"></image>
             <div>
                 <div class="about-des">
@@ -21,13 +21,13 @@
                 </div>
             </div>
         </div>
-        <div class="about-warp warp02">
+        <div class="about-warp">
             <text class="about-info">从事过电子商务与美工/UI相关工作，专职前端三年多，目前正努力朝全栈发展。</text>
             <text class="about-info">多年使用CMS(/freemarker)模板的经验，有独立开发网站的能力，能够使用php做一些简单的数据接口开发。</text>
             <text class="about-info">熟练使用JQ库以及VUE框架，对React也有一些接触（github中有贴出一个react实现的博客实例）。</text>
             <text class="about-info">欢迎小伙伴和我交流学习~</text>
         </div>
-        <div class="about-warp warp02 mb30">
+        <div class="about-warp mb30">
             <div class="about-des">
                 <text class="des-label">Github</text>
                 <text class="des-text">https://github.com/jingjingke</text>
@@ -48,28 +48,25 @@
         background-color: #fafafa;
         padding: 20px;
         border-radius: 24px;
-        flex-direction: row;
     }
-    .warp02 {
-        flex-direction: column;
+    .warp-row {
+        flex-direction: row;
     }
     .avatar {
         width: 200px;
         height: 200px;
         border-radius: 20px;
         margin-right: 24px;
-        overflow: hidden;
         background-color: #f2f2f2;
     }
     .about-des {
-        color: #333;
+        color: #333333;
         height: 50px;
         flex-direction: row;
         align-items:center;
     }
 
     .des-text {
-        display: inline-block;
         font-size: 26px;
     }
 
@@ -78,7 +75,7 @@
         font-size: 24px;
         text-align: center;
         background-color: #0aba07;
-        color: #fff;
+        color: #ffffff;
         border-radius: 10px;
         height: 34px;
         line-height: 34px;
@@ -88,9 +85,8 @@
     .about-info {
         font-size: 28px;
         line-height: 50px;
-        color: #333;
+        color: #333333;
         margin: 12px 0;
-        text-indent: 50px;
     }
     .mb30 {
         margin-bottom: 30px;

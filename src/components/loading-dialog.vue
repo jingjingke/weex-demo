@@ -45,6 +45,6 @@
         text-align: center;
         font-size: 64px;
         line-height: 130px;
-        color: #eee;
+        color: #eeeeee;
     }
 </style>

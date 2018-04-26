@@ -76,6 +76,6 @@
     .type-total {
         font-size: 24px;
         padding-left: 6px;
-        color: #999;
+        color: #999999;
     }
 </style>

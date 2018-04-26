@@ -61,7 +61,6 @@
     .section-li {
         flex: 1;
         justify-content: center;
-        align-items: stretch;
         border-right-width: 1px;
         border-right-color: #e8e8e8;
         text-align: center;
@@ -73,9 +72,9 @@
         height: 70px;
         line-height: 70px;
         text-align: center;
-        border-radius: 100%;
+        border-radius: 70px;
         font-size: 36px;
-        color: #fff;
+        color: #ffffff;
         background-color: #0aba07;
         justify-content: center;
         margin:0 0 12px 58px;
@@ -83,7 +82,7 @@
     .section-text {
         text-align: center;
         font-size: 24px;
-        color: #666;
+        color: #666666;
     }
     .bor-r-no {
         border-right-width: 0;

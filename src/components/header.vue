@@ -38,17 +38,15 @@
         left: 0;
         width: 750px;
         height: 90px;
-        overflow: hidden;
-        background-color: #222;
+        background-color: #222222;
     }
 
     .header-back {
-        color: #fff;
+        color: #ffffff;
         position: fixed;
         z-index: 100;
         top: 0;
         left: 0;
-        display: block;
         width: 90px;
         line-height: 90px;
         height: 90px;
@@ -58,13 +56,9 @@
     }
 
     .h1 {
-        color: #fff;
+        color: #ffffff;
         height: 90px;
         line-height: 90px;
-        overflow: hidden;
-        white-space: nowrap;
-        display: block;
-        text-overflow: ellipsis;
         text-align: center;
         margin-left: 100px;
         width: 550px;

@@ -42,34 +42,16 @@
         width: 510px;
     }
     .list-title {
-        display: block;
         font-size: 32px;
         height: 48px;
         line-height: 48px;
         margin-top: 30px;
-        overflow: hidden;
-        white-space: nowrap;
-        text-overflow: ellipsis;
-        color: #333;
-
+        color: #333333;
     }
     .list-des {
         font-size: 28px;
-        color: #999;
+        color: #999999;
         line-height: 44px;
         margin-top: 10px;
-    }
-    .list-des:after {
-        content: 'MORE';
-        color: #0aba07;
-        display: inline-block;
-        border: 1px solid #0aba07;
-        padding-left:10px;
-        padding-right: 10px;
-        border-radius: 5px;
-        font-size: 24px;
-        margin-left: 10px;
-        height: 32px;
-        line-height: 32px;
     }
 </style>

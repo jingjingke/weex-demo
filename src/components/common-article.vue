@@ -70,7 +70,7 @@
 
     .article-type, .article-t-s {
         background-color: #0aba07;
-        color: #fff;
+        color: #ffffff;
         border-radius: 40px;
         font-size: 26px;
         line-height: 56px;
@@ -80,10 +80,10 @@
     }
 
     .article-t-s {
-        background-color: #fff;
+        background-color: #ffffff;
         border-width: 1px;
         border-color: #f2f2f2;
-        color: #555;
+        color: #555555;
     }
 
     .article-title {
@@ -92,7 +92,6 @@
         padding: 24px;
         border-bottom-width: 1px;
         border-bottom-color: #f0f0f0;
-        border-bottom-style: dotted;
         font-weight: bold;
     }
 
@@ -109,7 +108,7 @@
 
     .article-keys {
         padding-bottom: 36px;
-        color: #999;
+        color: #999999;
     }
 
     .article-tag-warp {
@@ -127,7 +126,7 @@
         border-color: #f2f2f2;
         border-radius: 8px;
         background-color: #fafafa;
-        color: #555;
+        color: #555555;
         font-size: 26px;
     }
     .tag-link {

@@ -58,7 +58,6 @@
 
     .rich-text {
         padding: 0 24px;
-        word-break: break-all;
         margin-top: 24px;
     }
 
@@ -68,8 +67,8 @@
 
     .rich-pre-text {
         font-size: 24px;
-        white-space: pre-wrap;
-        color: #666;
+        /*white-space: pre-wrap;*/
+        color: #666666;
         background-color: #f8f8f8;
         padding: 24px;
         margin: 24px 24px 0;
@@ -95,31 +94,22 @@
         color: #ba3022;
     }
 
-    .rich-none {
-        display: none;
-        opacity: 0;
-        width: 0;
-        height: 0;
-        line-height: 0;
-    }
-
     .rich-table {
         margin: 24px 24px 0;
-        border-color: #ddd;
+        border-color: #dddddd;
         border-top-width: 1px;
         border-left-width: 1px;
     }
 
     .rich-tr {
         flex-direction: row;
-        align-items: stretch;
-        border-color: #ddd;
+        border-color: #dddddd;
         border-bottom-width: 1px;
     }
 
     .rich-td, .rich-th {
         flex: 1;
-        border-color: #ddd;
+        border-color: #dddddd;
         border-right-width: 1px;
     }
 

@@ -14,7 +14,7 @@
         height: 120px;
         line-height: 120px;
         text-align: center;
-        color: #ccc;
+        color: #cccccc;
         font-size: 24px;
     }
 </style>

@@ -26,9 +26,6 @@
         width: 750px;
         height: 400px;
     }
-    .slider {
-        position: relative;
-    }
 
     .indicator {
         position: absolute;
@@ -37,7 +34,7 @@
         bottom: 0;
         width:750px;
         height: 90px;
-        item-color: #eee;
+        item-color: #eeeeee;
         item-selected-color: #0aba07;
     }
 </style>

@@ -69,26 +69,25 @@
         text-align: center;
         flex:1;
         justify-content: center;
-        align-items:stretch;
     }
     .footer-icon {
         font-family: iconfont;
         text-align: center;
         font-size: 44px;
         line-height: 70px;
-        color: #ddd;
+        color: #dddddd;
     }
 
     .footer-text {
         font-size: 24px;
         line-height: 40px;
-        color: #999;
+        color: #999999;
         text-align: center;
     }
     .on-icon {
         color: #0aba07;
     }
     .on-text,.footer-text-on {
-        color: #333;
+        color: #333333;
     }
 </style>
