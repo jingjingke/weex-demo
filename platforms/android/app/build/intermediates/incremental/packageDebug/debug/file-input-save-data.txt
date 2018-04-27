@@ -1,0 +1,35 @@
+#Internal package file, do not edit.
+#Fri Apr 27 16:01:03 CST 2018
+7.path=classes.dex
+2.base=/Users/ziyan/git/online/weex-demo/platforms/android/app/build/intermediates/transforms/mergeJniLibs/debug/0
+5.set=NATIVE_RESOURCE
+0.path=index.js
+2.baseType=DIRECTORY
+3.base=/Users/ziyan/git/online/weex-demo/platforms/android/app/build/intermediates/assets/debug
+7.baseType=DIRECTORY
+2.set=NATIVE_RESOURCE
+1.path=lib/armeabi/libweexjsb.so
+4.base=/Users/ziyan/git/online/weex-demo/platforms/android/app/build/intermediates/assets/debug
+7.set=DEX
+count=8
+5.baseType=DIRECTORY
+2.path=lib/armeabi/libweexjsc.so
+5.base=/Users/ziyan/git/online/weex-demo/platforms/android/app/build/intermediates/transforms/mergeJniLibs/debug/0
+4.set=ASSET
+3.path=main.js
+6.base=/Users/ziyan/git/online/weex-demo/platforms/android/app/build/intermediates/transforms/mergeJniLibs/debug/0
+3.baseType=DIRECTORY
+1.set=NATIVE_RESOURCE
+4.path=dist/index.js
+7.base=/Users/ziyan/git/online/weex-demo/platforms/android/app/build/intermediates/transforms/dexMerger/debug/0
+6.set=NATIVE_RESOURCE
+1.baseType=DIRECTORY
+6.baseType=DIRECTORY
+5.path=lib/armeabi/libweexjss.so
+0.base=/Users/ziyan/git/online/weex-demo/platforms/android/app/build/intermediates/assets/debug
+0.baseType=DIRECTORY
+3.set=ASSET
+6.path=lib/x86/libweexjsc.so
+1.base=/Users/ziyan/git/online/weex-demo/platforms/android/app/build/intermediates/transforms/mergeJniLibs/debug/0
+4.baseType=DIRECTORY
+0.set=ASSET

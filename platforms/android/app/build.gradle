@@ -15,16 +15,17 @@ android {
             abiFilters "x86"
             abiFilters "armeabi"
         }
+        javaCompileOptions { annotationProcessorOptions { includeCompileClasspath = true } }
     }
-    applicationVariants.all { variant ->
-        variant.outputs.each { output ->
-            def outputFile = output.outputFile
-            if (outputFile != null && outputFile.name.equals('app-debug.apk')) {
-                def fileName = outputFile.name.replace("app-debug.apk", "weex-app.apk")
-                output.outputFile = new File(outputFile.parent, fileName)
-            }
-        }
-    }
+//    applicationVariants.all { variant ->
+//        variant.outputs.each { output ->
+//            def outputFile = output.outputFile
+//            if (outputFile != null && outputFile.name.equals('app-debug.apk')) {
+//                def fileName = outputFile.name.replace("app-debug.apk", "weex-app.apk")
+//                output.outputFile = new File(outputFile.parent, fileName)
+//            }
+//        }
+//    }
     signingConfigs {
         debug {
             storeFile file("tools/debug.keystore")

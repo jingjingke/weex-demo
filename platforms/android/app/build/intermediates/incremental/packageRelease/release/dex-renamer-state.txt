@@ -1,0 +1,4 @@
+#Fri Apr 27 15:55:52 CST 2018
+base.0=/Users/ziyan/git/online/weex-demo/platforms/android/app/build/intermediates/transforms/dex/release/0
+path.0=classes.dex
+renamed.0=classes.dex
