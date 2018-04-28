@@ -1,15 +1,17 @@
 <template>
-    <div>
+    <div class="pb130">
         <HeaderFlex :info="headInfo"></HeaderFlex>
         <LoadingDialog :status="isAjax">
             <TypeList :data="typeTree"></TypeList>
         </LoadingDialog>
+        <FooterFelx></FooterFelx>
     </div>
 </template>
 <script>
     import LoadingDialog from "@/components/loading-dialog"
     import HeaderFlex from "@/components/header"
     import TypeList from "@/components/type-list"
+    import FooterFelx from "@/components/footer"
 
     export default {
         data() {
@@ -61,7 +63,8 @@
         components: {
             LoadingDialog,
             HeaderFlex,
-            TypeList
+            TypeList,
+            FooterFelx
         },
         created() {
             this.getTypeList().then(() => {
@@ -72,3 +75,8 @@
         }
     }
 </script>
+<style scoped>
+    .pb130 {
+        padding-bottom: 130px;
+    }
+</style>

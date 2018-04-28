@@ -1,32 +1,21 @@
 <template>
     <div class="header">
-        <text class="header-back" v-show="isShow" @click="goBack">&#xe300;</text>
-        <text class="h1">{{title}}</text>
+        <text class="header-back" v-if="list.indexOf($route.path) < 0" @click="goBack">&#xe300;</text>
+        <text class="h1">{{info.title}}</text>
     </div>
 </template>
 <script>
-    const storage = weex.requireModule('storage')
-
     export default {
         data() {
             return {
-                title: '',
-                isShow: false,
-                historys: []
+                list:['/home','/type','/me']
             }
         },
         props: ['info'],
         methods: {
             goBack() {
-                this.$router.push(this.historys[this.historys.length - 2])
+                this.$router.back()
             }
-        },
-        created() {
-            storage.getItem('historys', event => {
-                this.historys = event.data.split(',');
-                this.title = this.info.title || '';
-                this.isShow = this.historys.length > 1 ? true : false;
-            })
         }
     }
 </script>

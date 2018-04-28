@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="pb130">
         <HeaderFlex :info="headInfo"></HeaderFlex>
         <LoadingDialog :status="isAjax">
             <HomeSlider :data="imageList"></HomeSlider>
@@ -9,7 +9,7 @@
                 <LoadingMore :status="hasMore"></LoadingMore>
             </div>
         </LoadingDialog>
-        <!--<FooterFelx></FooterFelx>-->
+        <FooterFelx></FooterFelx>
     </div>
 </template>
 <script>
@@ -98,3 +98,8 @@
         }
     }
 </script>
+<style scoped>
+    .pb130 {
+        padding-bottom: 130px;
+    }
+</style>
