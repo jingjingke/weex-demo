@@ -57,6 +57,7 @@
     }
 
     .rich-text {
+        font-size: 28px;
         padding: 0 24px;
         margin-top: 24px;
     }

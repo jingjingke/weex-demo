@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/ziyan/git/online/weex-demo/platforms/android/app/src/main/AndroidManifest.xml:2:1-47:12
-INJECTED from /Users/ziyan/git/online/weex-demo/platforms/android/app/src/main/AndroidManifest.xml:2:1-47:12
-INJECTED from /Users/ziyan/git/online/weex-demo/platforms/android/app/src/main/AndroidManifest.xml:2:1-47:12
-INJECTED from /Users/ziyan/git/online/weex-demo/platforms/android/app/src/main/AndroidManifest.xml:2:1-47:12
+ADDED from /Users/ziyan/git/online/weex-demo/platforms/android/app/src/main/AndroidManifest.xml:2:1-46:12
+INJECTED from /Users/ziyan/git/online/weex-demo/platforms/android/app/src/main/AndroidManifest.xml:2:1-46:12
+INJECTED from /Users/ziyan/git/online/weex-demo/platforms/android/app/src/main/AndroidManifest.xml:2:1-46:12
+INJECTED from /Users/ziyan/git/online/weex-demo/platforms/android/app/src/main/AndroidManifest.xml:2:1-46:12
 MERGED from [com.taobao.android:weex_sdk:0.16.0] /Users/ziyan/.gradle/caches/transforms-1/files-1.1/weex_sdk-0.16.0.aar/b60c5a0ff0d52270586cde8638b16b5e/AndroidManifest.xml:20:1-37:12
 MERGED from [com.android.support:design:26.1.0] /Users/ziyan/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/44f8b73413020a86643abd61dfbb3bcc/AndroidManifest.xml:17:1-31:12
 MERGED from [com.android.support:appcompat-v7:26.1.0] /Users/ziyan/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/e1cb65c6476ddebf39a4d39a0023810b/AndroidManifest.xml:17:1-31:12
@@ -21,22 +21,22 @@ MERGED from [com.android.support:support-compat:26.1.0] /Users/ziyan/.gradle/cac
 MERGED from [com.taobao.android:weex_inspector:0.10.0.5] /Users/ziyan/.gradle/caches/transforms-1/files-1.1/weex_inspector-0.10.0.5.aar/99ca23b6d2360138fce60d95115db896/AndroidManifest.xml:2:1-15:12
 MERGED from [com.taobao.android:weexplugin-loader:1.3] /Users/ziyan/.gradle/caches/transforms-1/files-1.1/weexplugin-loader-1.3.aar/1076543ab77ab79ed2ec58e989c902ed/AndroidManifest.xml:2:1-15:12
 MERGED from [android.arch.lifecycle:runtime:1.0.0] /Users/ziyan/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/6378b94d2e0336b2e3bba4470e82df5d/AndroidManifest.xml:17:1-30:12
-INJECTED from /Users/ziyan/git/online/weex-demo/platforms/android/app/src/main/AndroidManifest.xml:2:1-47:12
-INJECTED from /Users/ziyan/git/online/weex-demo/platforms/android/app/src/main/AndroidManifest.xml:2:1-47:12
-INJECTED from /Users/ziyan/git/online/weex-demo/platforms/android/app/src/main/AndroidManifest.xml:2:1-47:12
+INJECTED from /Users/ziyan/git/online/weex-demo/platforms/android/app/src/main/AndroidManifest.xml:2:1-46:12
+INJECTED from /Users/ziyan/git/online/weex-demo/platforms/android/app/src/main/AndroidManifest.xml:2:1-46:12
+INJECTED from /Users/ziyan/git/online/weex-demo/platforms/android/app/src/main/AndroidManifest.xml:2:1-46:12
 	package
 		ADDED from /Users/ziyan/git/online/weex-demo/platforms/android/app/src/main/AndroidManifest.xml:4:11-33
 		INJECTED from /Users/ziyan/git/online/weex-demo/platforms/android/app/src/main/AndroidManifest.xml
 		INJECTED from /Users/ziyan/git/online/weex-demo/platforms/android/app/src/main/AndroidManifest.xml
 	android:versionName
 		INJECTED from /Users/ziyan/git/online/weex-demo/platforms/android/app/src/main/AndroidManifest.xml
-		ADDED from /Users/ziyan/git/online/weex-demo/platforms/android/app/src/main/AndroidManifest.xml:2:1-47:12
+		ADDED from /Users/ziyan/git/online/weex-demo/platforms/android/app/src/main/AndroidManifest.xml:2:1-46:12
 		INJECTED from /Users/ziyan/git/online/weex-demo/platforms/android/app/src/main/AndroidManifest.xml
 	xmlns:tools
 		ADDED from /Users/ziyan/git/online/weex-demo/platforms/android/app/src/main/AndroidManifest.xml:3:11-57
 	android:versionCode
 		INJECTED from /Users/ziyan/git/online/weex-demo/platforms/android/app/src/main/AndroidManifest.xml
-		ADDED from /Users/ziyan/git/online/weex-demo/platforms/android/app/src/main/AndroidManifest.xml:2:1-47:12
+		ADDED from /Users/ziyan/git/online/weex-demo/platforms/android/app/src/main/AndroidManifest.xml:2:1-46:12
 		INJECTED from /Users/ziyan/git/online/weex-demo/platforms/android/app/src/main/AndroidManifest.xml
 	xmlns:android
 		ADDED from /Users/ziyan/git/online/weex-demo/platforms/android/app/src/main/AndroidManifest.xml:2:11-69
@@ -75,7 +75,7 @@ MERGED from [com.journeyapps:zxing-android-embedded:3.4.0] /Users/ziyan/.gradle/
 	android:name
 		ADDED from /Users/ziyan/git/online/weex-demo/platforms/android/app/src/main/AndroidManifest.xml:13:19-67
 application
-ADDED from /Users/ziyan/git/online/weex-demo/platforms/android/app/src/main/AndroidManifest.xml:15:5-45:19
+ADDED from /Users/ziyan/git/online/weex-demo/platforms/android/app/src/main/AndroidManifest.xml:15:5-44:19
 MERGED from [com.taobao.android:weex_sdk:0.16.0] /Users/ziyan/.gradle/caches/transforms-1/files-1.1/weex_sdk-0.16.0.aar/b60c5a0ff0d52270586cde8638b16b5e/AndroidManifest.xml:29:5-35:19
 MERGED from [com.taobao.android:weex_sdk:0.16.0] /Users/ziyan/.gradle/caches/transforms-1/files-1.1/weex_sdk-0.16.0.aar/b60c5a0ff0d52270586cde8638b16b5e/AndroidManifest.xml:29:5-35:19
 MERGED from [com.android.support:design:26.1.0] /Users/ziyan/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/44f8b73413020a86643abd61dfbb3bcc/AndroidManifest.xml:25:5-29:19
@@ -127,44 +127,34 @@ MERGED from [android.arch.lifecycle:runtime:1.0.0] /Users/ziyan/.gradle/caches/t
 		ADDED from /Users/ziyan/git/online/weex-demo/platforms/android/app/src/main/AndroidManifest.xml:23:9-44
 	android:name
 		ADDED from /Users/ziyan/git/online/weex-demo/platforms/android/app/src/main/AndroidManifest.xml:16:9-50
-activity#com.weex.app.SplashActivity
-ADDED from /Users/ziyan/git/online/weex-demo/platforms/android/app/src/main/AndroidManifest.xml:24:9-35:20
+activity#com.weex.app.WXPageActivity
+ADDED from /Users/ziyan/git/online/weex-demo/platforms/android/app/src/main/AndroidManifest.xml:24:9-34:20
 	android:screenOrientation
 		ADDED from /Users/ziyan/git/online/weex-demo/platforms/android/app/src/main/AndroidManifest.xml:28:13-49
 	android:label
 		ADDED from /Users/ziyan/git/online/weex-demo/platforms/android/app/src/main/AndroidManifest.xml:27:13-45
 	android:configChanges
 		ADDED from /Users/ziyan/git/online/weex-demo/platforms/android/app/src/main/AndroidManifest.xml:26:13-74
-	android:theme
-		ADDED from /Users/ziyan/git/online/weex-demo/platforms/android/app/src/main/AndroidManifest.xml:29:13-51
 	android:name
 		ADDED from /Users/ziyan/git/online/weex-demo/platforms/android/app/src/main/AndroidManifest.xml:25:13-55
 intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
-ADDED from /Users/ziyan/git/online/weex-demo/platforms/android/app/src/main/AndroidManifest.xml:30:13-34:29
+ADDED from /Users/ziyan/git/online/weex-demo/platforms/android/app/src/main/AndroidManifest.xml:29:13-33:29
 action#android.intent.action.MAIN
-ADDED from /Users/ziyan/git/online/weex-demo/platforms/android/app/src/main/AndroidManifest.xml:31:17-68
+ADDED from /Users/ziyan/git/online/weex-demo/platforms/android/app/src/main/AndroidManifest.xml:30:17-68
 	android:name
-		ADDED from /Users/ziyan/git/online/weex-demo/platforms/android/app/src/main/AndroidManifest.xml:31:25-66
+		ADDED from /Users/ziyan/git/online/weex-demo/platforms/android/app/src/main/AndroidManifest.xml:30:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /Users/ziyan/git/online/weex-demo/platforms/android/app/src/main/AndroidManifest.xml:33:17-76
+ADDED from /Users/ziyan/git/online/weex-demo/platforms/android/app/src/main/AndroidManifest.xml:32:17-76
 	android:name
-		ADDED from /Users/ziyan/git/online/weex-demo/platforms/android/app/src/main/AndroidManifest.xml:33:27-74
-activity#com.weex.app.WXPageActivity
-ADDED from /Users/ziyan/git/online/weex-demo/platforms/android/app/src/main/AndroidManifest.xml:36:9-40:20
-	android:screenOrientation
-		ADDED from /Users/ziyan/git/online/weex-demo/platforms/android/app/src/main/AndroidManifest.xml:39:13-49
-	android:label
-		ADDED from /Users/ziyan/git/online/weex-demo/platforms/android/app/src/main/AndroidManifest.xml:38:13-45
-	android:name
-		ADDED from /Users/ziyan/git/online/weex-demo/platforms/android/app/src/main/AndroidManifest.xml:37:13-55
+		ADDED from /Users/ziyan/git/online/weex-demo/platforms/android/app/src/main/AndroidManifest.xml:32:27-74
 activity#com.journeyapps.barcodescanner.CaptureActivity
-ADDED from /Users/ziyan/git/online/weex-demo/platforms/android/app/src/main/AndroidManifest.xml:41:9-44:48
+ADDED from /Users/ziyan/git/online/weex-demo/platforms/android/app/src/main/AndroidManifest.xml:40:9-43:48
 MERGED from [com.journeyapps:zxing-android-embedded:3.4.0] /Users/ziyan/.gradle/caches/transforms-1/files-1.1/zxing-android-embedded-3.4.0.aar/350f624ed99682779cb93b291d4e3bf7/AndroidManifest.xml:46:9-52:63
 MERGED from [com.journeyapps:zxing-android-embedded:3.4.0] /Users/ziyan/.gradle/caches/transforms-1/files-1.1/zxing-android-embedded-3.4.0.aar/350f624ed99682779cb93b291d4e3bf7/AndroidManifest.xml:46:9-52:63
 	android:clearTaskOnLaunch
 		ADDED from [com.journeyapps:zxing-android-embedded:3.4.0] /Users/ziyan/.gradle/caches/transforms-1/files-1.1/zxing-android-embedded-3.4.0.aar/350f624ed99682779cb93b291d4e3bf7/AndroidManifest.xml:48:13-45
 	android:screenOrientation
-		ADDED from /Users/ziyan/git/online/weex-demo/platforms/android/app/src/main/AndroidManifest.xml:43:13-49
+		ADDED from /Users/ziyan/git/online/weex-demo/platforms/android/app/src/main/AndroidManifest.xml:42:13-49
 		REJECTED from [com.journeyapps:zxing-android-embedded:3.4.0] /Users/ziyan/.gradle/caches/transforms-1/files-1.1/zxing-android-embedded-3.4.0.aar/350f624ed99682779cb93b291d4e3bf7/AndroidManifest.xml:49:13-56
 	android:stateNotNeeded
 		ADDED from [com.journeyapps:zxing-android-embedded:3.4.0] /Users/ziyan/.gradle/caches/transforms-1/files-1.1/zxing-android-embedded-3.4.0.aar/350f624ed99682779cb93b291d4e3bf7/AndroidManifest.xml:50:13-42
@@ -173,9 +163,9 @@ MERGED from [com.journeyapps:zxing-android-embedded:3.4.0] /Users/ziyan/.gradle/
 	android:theme
 		ADDED from [com.journeyapps:zxing-android-embedded:3.4.0] /Users/ziyan/.gradle/caches/transforms-1/files-1.1/zxing-android-embedded-3.4.0.aar/350f624ed99682779cb93b291d4e3bf7/AndroidManifest.xml:51:13-54
 	tools:replace
-		ADDED from /Users/ziyan/git/online/weex-demo/platforms/android/app/src/main/AndroidManifest.xml:44:13-46
+		ADDED from /Users/ziyan/git/online/weex-demo/platforms/android/app/src/main/AndroidManifest.xml:43:13-46
 	android:name
-		ADDED from /Users/ziyan/git/online/weex-demo/platforms/android/app/src/main/AndroidManifest.xml:42:13-74
+		ADDED from /Users/ziyan/git/online/weex-demo/platforms/android/app/src/main/AndroidManifest.xml:41:13-74
 uses-sdk
 INJECTED from /Users/ziyan/git/online/weex-demo/platforms/android/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /Users/ziyan/git/online/weex-demo/platforms/android/app/src/main/AndroidManifest.xml

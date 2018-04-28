@@ -102,13 +102,9 @@
     }
 
     .article-text {
+        font-size: 28px;
         padding: 24px 24px 0;
         line-height: 52px;
-    }
-
-    .article-keys {
-        padding-bottom: 36px;
-        color: #999999;
     }
 
     .article-tag-warp {

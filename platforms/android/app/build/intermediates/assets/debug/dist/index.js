@@ -407,6 +407,7 @@ module.exports = {
     "marginLeft": "25"
   },
   "rich-text": {
+    "fontSize": "28",
     "paddingTop": 0,
     "paddingRight": "24",
     "paddingBottom": 0,
@@ -3406,7 +3407,8 @@ module.exports = {
     "lineHeight": "90",
     "textAlign": "center",
     "marginLeft": "100",
-    "width": "550"
+    "width": "550",
+    "fontSize": "32"
   }
 }
 
@@ -5186,15 +5188,12 @@ module.exports = {
     "marginLeft": "25"
   },
   "article-text": {
+    "fontSize": "28",
     "paddingTop": "24",
     "paddingRight": "24",
     "paddingBottom": 0,
     "paddingLeft": "24",
     "lineHeight": "52"
-  },
-  "article-keys": {
-    "paddingBottom": "36",
-    "color": "#999999"
   },
   "article-tag-warp": {
     "paddingTop": "36",

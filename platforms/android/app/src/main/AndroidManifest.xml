@@ -22,22 +22,22 @@
         tools:overrideLibrary="com.taobao.android.dexposed"
         tools:replace="android:allowBackup">
         <activity
-            android:name="com.weex.app.SplashActivity"
+            android:name="com.weex.app.WXPageActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
-            android:theme="@style/FullscreenTheme">
+            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity
-            android:name="com.weex.app.WXPageActivity"
-            android:label="@string/app_name"
-            android:screenOrientation="portrait">
-        </activity>
+        <!--<activity-->
+            <!--android:name="com.weex.app.WXPageActivity"-->
+            <!--android:label="@string/app_name"-->
+            <!--android:screenOrientation="portrait">-->
+        <!--</activity>-->
         <activity
             android:name="com.journeyapps.barcodescanner.CaptureActivity"
             android:screenOrientation="portrait"

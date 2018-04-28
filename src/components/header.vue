@@ -62,5 +62,6 @@
         text-align: center;
         margin-left: 100px;
         width: 550px;
+        font-size: 32px;
     }
 </style>
