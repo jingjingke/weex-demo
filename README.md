@@ -43,5 +43,6 @@ npm run pack:web
 
 ### 效果图
 一开始规划的效果图如下，三端尽量会往这方向靠(目前正在调试兼容等)：
-![效图片](configs/effect.gif)
+
+![效图片](https://jingjingke.github.io/weex-demo/configs/effect.gif)
 
